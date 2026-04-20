@@ -11,15 +11,16 @@ let activeRole = 'general';
 function setRole(role) {
   activeRole = role;
 
-  // 1. Update trigger label
-  const label = document.getElementById('role-label');
-  if (label) label.textContent = `Viewing: ${ROLES[role].label}`;
+  // 1. Update all trigger labels (desktop + mobile)
+  document.querySelectorAll('.role-label').forEach(el => {
+    el.textContent = `Viewing: ${ROLES[role].label}`;
+  });
 
   // 2. Update resume button href
   const resumeBtn = document.querySelector('[data-resume-link]');
   if (resumeBtn) resumeBtn.href = ROLES[role].resume;
 
-  // 3. Update aria-selected on menu items
+  // 3. Update aria-selected on all menu items (desktop dropdown + mobile sheet)
   document.querySelectorAll('[data-role]').forEach(item => {
     item.setAttribute('aria-selected', item.dataset.role === role ? 'true' : 'false');
   });
@@ -46,7 +47,7 @@ function setRole(role) {
 
 function initRoleSwitcher() {
   const trigger = document.getElementById('role-trigger');
-  const menu = document.querySelector('.role-switcher__menu');
+  const menu = document.querySelector('#role-switcher .role-switcher__menu');
   if (!trigger || !menu) return;
 
   trigger.addEventListener('click', () => {
@@ -79,5 +80,45 @@ function initRoleSwitcher() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initRoleSwitcher);
-document.addEventListener('astro:after-swap', initRoleSwitcher);
+function initMobileRoleSwitcher() {
+  const trigger = document.getElementById('role-trigger-mobile');
+  const sheet = document.getElementById('role-sheet');
+  const backdrop = document.getElementById('role-sheet-backdrop');
+  if (!trigger || !sheet || !backdrop) return;
+
+  function openSheet() {
+    sheet.classList.add('open');
+    backdrop.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSheet() {
+    sheet.classList.remove('open');
+    backdrop.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  trigger.addEventListener('click', openSheet);
+  backdrop.addEventListener('click', closeSheet);
+
+  sheet.addEventListener('click', (e) => {
+    const item = e.target.closest('[data-role]');
+    if (!item) return;
+    setRole(item.dataset.role);
+    closeSheet();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSheet();
+  });
+}
+
+function init() {
+  initRoleSwitcher();
+  initMobileRoleSwitcher();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('astro:after-swap', init);
