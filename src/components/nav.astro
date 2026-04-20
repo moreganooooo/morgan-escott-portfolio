@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
   >
     <div class="container mx-auto flex justify-center items-center p-3 relative reveal-content" style="animation-delay: 700ms;">
       <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-1"
+        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-8 gap-1"
       >
         <li class="hidden md:flex md:flex-none items-center relative" id="role-switcher">
           <button
@@ -440,7 +440,7 @@ const navItems: NavItem[] = [
       const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
       const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
 
-      const minWidth = 620;
+      const minWidth = 580;
       const maxWidth = window.innerWidth * 0.8;
       const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
 
