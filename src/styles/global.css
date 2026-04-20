@@ -110,12 +110,15 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-optical-sizing: auto;
-    font-weight: 500;
     text-shadow:
       0 0 0.5px currentColor,
-      0 0 1px currentColor;
-    font-variation-settings: 'wght' 600, 'opsz' 72;
+      0 0 1px currentColor,
+      0 0 1.5px currentColor;
   }
+
+  h1 { font-variation-settings: 'wght' 600, 'opsz' 96; }
+  h2 { font-variation-settings: 'wght' 550, 'opsz' 72; }
+  h3 { font-variation-settings: 'wght' 500, 'opsz' 64; }
 }
 
 @layer components {
