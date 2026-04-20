@@ -14,8 +14,8 @@
   --color-darkgray:      rgba(255, 255, 255, 0.3);
 
   /* ── Typography ── */
-  --font-heading: 'Bodoni Moda', 'Georgia', serif;
-  --font-body:    'Satoshi', 'Inter', sans-serif;
+  --font-heading-display: 'Bodoni Moda', 'Georgia', serif;  /* hero only */
+  --font-heading: 'DM Serif Display', 'Georgia', serif;  /* all other headings */
 
   /* Custom Animations */
   --animate-fall: fall linear forwards;
@@ -107,18 +107,19 @@
     min-height: 100vh;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+  h1 {
+    font-family: var(--font-heading-display);
     font-optical-sizing: auto;
-    text-shadow:
+    font-variation-settings: 'wght' 600, 'opsz' 96;
       0 0 0.5px currentColor,
       0 0 1px currentColor,
       0 0 1.5px currentColor;
   }
 
-  h1 { font-variation-settings: 'wght' 600, 'opsz' 96; }
-  h2 { font-variation-settings: 'wght' 550, 'opsz' 72; }
-  h3 { font-variation-settings: 'wght' 500, 'opsz' 64; }
+  h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;  /* DM Serif only comes in one weight, this is fine */
+  }
 }
 
 @layer components {
