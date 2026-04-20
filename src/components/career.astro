@@ -6,7 +6,7 @@ const { items } = careerData;
 <section id="career" class="section-container max-w-6xl mx-auto overflow-hidden">
   <div class="container mx-auto  reveal-content" style="animation-delay: 1000ms;">
     <div>
-      <h2 class="text-3xl md:text-4xl font-heading text-white tracking-wide mb-2 flex items-center gap-4">
+      <h2 class="text-3xl md:text-4xl font-heading text-white mb-2 flex items-center gap-4">
         <span class="text-accent">/</span> Career
       </h2>
       <p class="text-gray font-body text-sm max-w-md pb-8">
@@ -31,7 +31,7 @@ const { items } = careerData;
             {/* cards for mobile view*/}
             <div class="scroll-stat bg-white/5 border border-white/10 p-4 rounded-2xl" data-roles="all">
               <span class="text-accent font-mono text-xs tracking-widest uppercase">{item.period}</span>
-              <h3 class="text-xl font-heading font-bold text-white mt-1">{item.role}</h3>
+              <h3 class="text-xl font-heading text-white mt-1">{item.role}</h3>
               <p class="text-gray-400 text-sm mb-4">{item.company}</p>
               <p class="text-gray-500 font-body text-sm leading-relaxed mb-4">{item.description}</p>
               <div class="flex flex-wrap gap-2">
@@ -59,7 +59,7 @@ const { items } = careerData;
               {index % 2 === 0 ? (
                 <div class="scroll-stat bg-white/5 border border-white/10 p-6 rounded-2xl text-right hover:border-accent/30 transition-all group" data-roles="all">
                   <span class="text-accent font-mono text-xs tracking-widest uppercase">{item.period}</span>
-                  <h3 class="text-xl font-heading font-bold text-white mt-1">{item.role}</h3>
+                  <h3 class="text-xl font-heading text-white mt-1">{item.role}</h3>
                   <p class="text-gray text-sm mb-4">{item.company}</p>
                   <p class="text-gray-400 font-body text-sm leading-relaxed mb-4">{item.description}</p>
                   <div class="flex flex-wrap gap-2 justify-end">
@@ -76,7 +76,7 @@ const { items } = careerData;
               {index % 2 !== 0 ? (
                 <div class="scroll-stat bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-accent/30 transition-all group" data-roles="all">
                   <span class="text-accent font-mono text-xs tracking-widest uppercase">{item.period}</span>
-                  <h3 class="text-xl font-heading font-bold text-white mt-1">{item.role}</h3>
+                  <h3 class="text-xl font-heading text-white mt-1">{item.role}</h3>
                   <p class="text-gray text-sm mb-4">{item.company}</p>
                   <p class="text-gray-400 font-body text-sm leading-relaxed mb-4">{item.description}</p>
                   <div class="flex flex-wrap gap-2">
