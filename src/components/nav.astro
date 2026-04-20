@@ -39,60 +39,65 @@ const navItems: NavItem[] = [
   }
 ];
 ---
+<!-- Desktop: role switcher sits independently to the left of the nav pill -->
+<div
+  id="role-switcher-wrapper"
+  class="hidden md:flex fixed z-20 md:top-6 items-center reveal-content"
+  style="left: 50%; transform: translateX(calc(-50% - 240px)); animation-delay: 700ms;"
+>
+  <div class="relative" id="role-switcher">
+    <button
+      class="role-switcher__trigger"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      id="role-trigger"
+    >
+      <span class="role-label">Viewing: General</span>
+      <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+        <path d="M6 8L1 3h10L6 8z"/>
+      </svg>
+    </button>
 
-<div class="flex justify-center w-full">
-  <nav
-    id="main-nav"
-    class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
-  >
-    <div class="container mx-auto flex justify-center items-center p-3 relative reveal-content" style="animation-delay: 700ms;">
-      <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-8 gap-1"
-      >
-        <li class="hidden md:flex md:flex-none items-center relative" id="role-switcher">
-          <button
-            class="role-switcher__trigger"
-            aria-haspopup="listbox"
-            aria-expanded="false"
-            id="role-trigger"
-          >
-            <span class="role-label">Viewing: General</span>
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
-              <path d="M6 8L1 3h10L6 8z"/>
-            </svg>
-          </button>
+    <ul class="role-switcher__menu" role="listbox" aria-labelledby="role-trigger" hidden>
+      <li role="option" data-role="general"   aria-selected="true">✦ General</li>
+      <li role="option" data-role="sales-ops" aria-selected="false">Sales Operations &amp; CRM</li>
+      <li role="option" data-role="marketing" aria-selected="false">Marketing &amp; Copywriting</li>
+      <li role="option" data-role="creative"  aria-selected="false">Branding &amp; Creative</li>
+      <li role="option" data-role="admin"     aria-selected="false">Executive &amp; Admin Support</li>
+    </ul>
+  </div>
+</div>
 
-          <ul class="role-switcher__menu" role="listbox" aria-labelledby="role-trigger" hidden>
-            <li role="option" data-role="general"     aria-selected="true">✦ General</li>
-            <li role="option" data-role="sales-ops"   aria-selected="false">Sales Operations & CRM</li>
-            <li role="option" data-role="marketing"   aria-selected="false">Marketing & Copywriting</li>
-            <li role="option" data-role="creative"    aria-selected="false">Branding & Creative</li>
-            <li role="option" data-role="admin"       aria-selected="false">Executive & Admin Support</li>
-          </ul>
-        </li>
-        {
-          navItems.map((item) => (
-            <li class="flex-1 md:flex-none">
-              <a
-                href={item.href}
-                class="flex flex-col items-center gap-1 text-gray-400 transition-colors text-xs md:text-base relative group"
-              >
-                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 nav-indicator hidden md:block" />
-                <span class="md:hidden flex items-center justify-center w-6 h-6">
-                  <Icon
-                    name={item.icon}
-                    class="nav-icon w-full h-full text-gray-400 group-hover:text-accent transition-colors duration-300"
-                  />
-                </span>
-                <span class="hidden md:inline-block">{item.label}</span>
-                <span class="md:hidden text-xs">{item.label}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </nav>
+<!-- Nav: now only contains the page links, so the pill background wraps them correctly -->
+<nav
+  id="main-nav"
+  class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+>
+  <div class="container mx-auto flex justify-center items-center p-3 relative reveal-content" style="animation-delay: 700ms;">
+    <ul class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-8 gap-1">
+      {
+        navItems.map((item) => (
+          <li class="flex-1 md:flex-none">
+            <a
+              href={item.href}
+              class="flex flex-col items-center gap-1 text-gray-400 transition-colors text-xs md:text-base relative group"
+            >
+              <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 nav-indicator hidden md:block" />
+              <span class="md:hidden flex items-center justify-center w-6 h-6">
+                <Icon
+                  name={item.icon}
+                  class="nav-icon w-full h-full text-gray-400 group-hover:text-accent transition-colors duration-300"
+                />
+              </span>
+              <span class="hidden md:inline-block">{item.label}</span>
+              <span class="md:hidden text-xs">{item.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
 </div>
 
 <!-- Mobile: floating pill above bottom nav -->
