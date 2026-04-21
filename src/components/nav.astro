@@ -144,12 +144,10 @@ const navItems: NavItem[] = [
 
   /* ── Nav pill ── */
   nav {
-    width: var(--nav-width, fit-content);
     background-color: transparent;
     border-color: transparent;
     backdrop-filter: blur(0px);
     transition:
-      width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
       background-color 0.4s ease,
       backdrop-filter 0.4s ease,
       border-radius 0.4s ease,
@@ -429,7 +427,6 @@ const navItems: NavItem[] = [
 
 <script>
   const nav = document.getElementById("main-nav");
-  const maxScroll = 1000;
   let lastScrollY = window.scrollY;
   let rafId: number | null = null;
 
@@ -438,19 +435,8 @@ const navItems: NavItem[] = [
 
     if (currentScrollY > 0) {
       nav?.classList.add("scrolling");
-
-      const scrollProgress = Math.min(currentScrollY / maxScroll, 1);
-      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
-      const minWidth = 560;
-      const maxWidth = window.innerWidth * 0.8;
-      const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
-
-      if (window.innerWidth >= 768) {
-        nav?.style.setProperty("--nav-width", `${currentWidth}px`);
-      }
     } else {
       nav?.classList.remove("scrolling");
-      nav?.style.removeProperty("--nav-width");
     }
 
     if (window.innerWidth < 768) {
