@@ -71,7 +71,7 @@ const navItems: NavItem[] = [
 <!-- Nav: now only contains the page links, so the pill background wraps them correctly -->
 <nav
   id="main-nav"
-  class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+  class="fixed left-1/2 -translate-x-1/2 z-20 border-[1.2px] border-transparent transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0"
 >
   <div class="container mx-auto flex justify-center items-center p-3 relative reveal-content" style="animation-delay: 700ms;">
     <ul class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-8 gap-1">
@@ -157,18 +157,18 @@ const navItems: NavItem[] = [
     display: flex; /* override the none above, only on mobile */
   }
   }
-  
 
   nav {
+    width: var(--nav-width, 80%);
     background-color: transparent;
     border-color: transparent;
     backdrop-filter: blur(0px);
     transition:
+      width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), /* ← smoother easing, slightly longer */
       background-color 0.4s ease,
       backdrop-filter 0.4s ease,
       border-radius 0.4s ease,
-      border-color 0.4s ease,
-      width 0.4s ease;
+      border-color 0.4s ease;
   }
 
   nav.scrolling {
@@ -263,13 +263,13 @@ const navItems: NavItem[] = [
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.3rem 0.8rem;
+    padding: 0.6rem 1rem;
     border: 1px solid oklch(0.72 0.18 35 / 0.35);
     border-radius: 9999px;
     background: oklch(0.72 0.18 35 / 0.08);
     color: oklch(0.72 0.18 35);
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.03em;
     cursor: pointer;
@@ -308,6 +308,9 @@ const navItems: NavItem[] = [
   .role-switcher__menu li[aria-selected="true"] {
     background: oklch(0.72 0.18 35 / 0.12);
     color: oklch(0.72 0.18 35);
+  }
+  #role-switcher-wrapper {
+    transition: left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   /* Hover effect */
@@ -448,7 +451,7 @@ const navItems: NavItem[] = [
     if (currentScrollY > 0) {
       nav?.classList.add("scrolling");
 
-      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
+      const scrollProgress = Math.min(currentScrollY / maxScroll, 1);
       const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
 
       const minWidth = 560;
@@ -456,11 +459,12 @@ const navItems: NavItem[] = [
       const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
 
       if (window.innerWidth >= 768) {
-        nav?.style.setProperty("width", `${currentWidth}px`);
+        // Use CSS var instead of direct style — lets the CSS transition handle smoothing
+        nav?.style.setProperty("--nav-width", `${currentWidth}px`);
       }
     } else {
       nav?.classList.remove("scrolling");
-      // nav?.style.setProperty("width", "80%");
+      nav?.style.removeProperty("--nav-width");
     }
         // Position role switcher flush to the left edge of the nav
     const switcher = document.getElementById('role-switcher-wrapper') as HTMLElement | null;
@@ -491,7 +495,7 @@ setTimeout(() => {
     const navRect = nav.getBoundingClientRect();
     switcher.style.left = `${navRect.left - switcher.offsetWidth - 8}px`;
   }
-}, 100);
+}, 350);
 
   window.addEventListener(
     "scroll",
