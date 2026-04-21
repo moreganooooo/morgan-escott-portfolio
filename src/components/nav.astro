@@ -98,7 +98,6 @@ const navItems: NavItem[] = [
     </ul>
   </div>
 </nav>
-</div>
 
 <!-- Mobile: floating pill above bottom nav -->
 <button
@@ -148,6 +147,11 @@ const navItems: NavItem[] = [
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: 70px;
     }
   }
 
@@ -538,15 +542,3 @@ const navItems: NavItem[] = [
     sections.forEach((section) => observer.observe(section));
   });
 </script>
-
-<style>
-  @media (max-width: 767px) {
-    body {
-      padding-bottom: 70px;
-    }
-  }
-
-  nav a.active {
-    color: white !important;
-  }
-</style>
