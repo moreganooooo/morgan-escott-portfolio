@@ -38,7 +38,7 @@ const navItems: NavItem[] = [
 <!-- Shared fixed row: role-switcher + nav pill sit as flex siblings -->
 <div
   id="nav-row"
-  class="fixed z-20 md:top-6 left-1/2 -translate-x-1/2 flex items-center gap-2"
+  class="fixed z-20 md:top-6 md:left-1/2 md:-translate-x-1/2 flex items-center gap-2"
 >
   <!-- Desktop role switcher -->
   <div class="hidden md:flex relative" id="role-switcher">
@@ -66,7 +66,7 @@ const navItems: NavItem[] = [
   <!-- Nav pill: only page links, no switcher inside -->
   <nav
     id="main-nav"
-    class="border-[1.2px] border-transparent md:bottom-auto bottom-0"
+    class="border-[1.2px] border-transparent"
   >
     <div class="flex justify-center items-center p-3 w-full">
       <ul class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-8 gap-1">
@@ -217,12 +217,10 @@ const navItems: NavItem[] = [
     }
 
     #nav-row {
-      top: auto !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      transform: none !important;
-      display: block !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
       animation: none;
       opacity: 1;
     }
