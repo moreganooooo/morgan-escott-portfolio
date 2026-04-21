@@ -43,7 +43,7 @@ const navItems: NavItem[] = [
 <div
   id="role-switcher-wrapper"
   class="hidden md:flex fixed z-20 md:top-6 items-center reveal-content"
-  style="left: 50%; transform: translateX(calc(-50% - 240px)); animation-delay: 700ms;"
+  style="animation-delay: 700ms;"
 >
   <div class="relative" id="role-switcher">
     <button
@@ -456,6 +456,13 @@ const navItems: NavItem[] = [
       nav?.classList.remove("scrolling");
       // nav?.style.setProperty("width", "80%");
     }
+        // Position role switcher flush to the left edge of the nav
+    const switcher = document.getElementById('role-switcher-wrapper') as HTMLElement | null;
+    if (switcher && nav) {
+      const navRect = nav.getBoundingClientRect();
+      switcher.style.left = `${navRect.left - switcher.offsetWidth - 8}px`;
+      switcher.style.transform = 'none';
+    }
     if (window.innerWidth < 768) {
       const mobilePill = document.getElementById("role-trigger-mobile");
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
@@ -470,6 +477,15 @@ const navItems: NavItem[] = [
     lastScrollY = currentScrollY;
     rafId = null;
   }
+
+  // Initial position on load
+  requestAnimationFrame(() => {
+    const switcher = document.getElementById('role-switcher-wrapper') as HTMLElement | null;
+    if (switcher && nav) {
+      const navRect = nav.getBoundingClientRect();
+      switcher.style.left = `${navRect.left - switcher.offsetWidth - 8}px`;
+    }
+  });
 
   window.addEventListener(
     "scroll",
