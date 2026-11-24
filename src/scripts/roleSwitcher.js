@@ -1,9 +1,9 @@
 const ROLES = {
-  general:     { label: 'General',                  resume: '/resumes/morgan-escott-resume.pdf' },
-  'sales-ops': { label: 'Sales Operations & CRM',   resume: '/resumes/morgan-escott-sales-ops.pdf' },
-  marketing:   { label: 'Marketing & Copywriting',  resume: '/resumes/morgan-escott-marketing.pdf' },
-  creative:    { label: 'Branding & Creative',       resume: '/resumes/morgan-escott-creative.pdf' },
-  admin:       { label: 'Executive & Admin Support', resume: '/resumes/morgan-escott-admin.pdf' },
+  general:     { label: 'General' },
+  'sales-ops': { label: 'Sales Operations & CRM' },
+  marketing:   { label: 'Marketing & Copywriting' },
+  creative:    { label: 'Branding & Creative' },
+  admin:       { label: 'Executive & Admin Support' },
 };
 
 let activeRole = 'general';
@@ -15,10 +15,6 @@ function setRole(role) {
   document.querySelectorAll('.role-label').forEach(el => {
     el.textContent = `Viewing: ${ROLES[role].label}`;
   });
-
-  // 2. Update resume button href
-  const resumeBtn = document.querySelector('[data-resume-link]');
-  if (resumeBtn) resumeBtn.href = ROLES[role].resume;
 
   // 3. Update aria-selected on all menu items (desktop dropdown + mobile sheet)
   document.querySelectorAll('[data-role]').forEach(item => {

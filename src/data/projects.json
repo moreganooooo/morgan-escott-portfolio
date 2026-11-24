@@ -1,22 +1,73 @@
 {
   "items": [
     {
-      "title": "Awesome Website",
-      "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
-      "images": ["astro-01.webp", "astro-02.jpeg"],
-      "tech": ["Astro", "Tailwind"],
-      "platforms": ["web"],
-      "link": "/project",
-      "category": "Published Website"
+      "title": "Making school outreach easier to teach",
+      "description": "At Treering, I organized 129 Outreach sequences and built a guide for new reps. Here’s how the messaging, tags, and training fit together.",
+      "images": [],
+      "tech": [
+        "Sales enablement",
+        "Campaign QA",
+        "Documentation"
+      ],
+      "platforms": [],
+      "link": "/project/",
+      "category": "Treering case study",
+      "roles": [
+        "sales-ops",
+        "marketing",
+        "admin"
+      ]
     },
     {
-      "title": "Demo Mobile App",
-      "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
-      "images": ["astro-02.jpeg", "#"],
-      "tech": ["Flutter", "Dart", "REST API"],
-      "platforms": ["apple-ios", "android"],
-      "link": "/project",
-      "category": "Hobby"
+      "title": "One product, three school audiences",
+      "description": "For a Curipod job application, I wrote three ways to introduce the same classroom tool. Read the pitches for a teacher, a technology director, and a curriculum director.",
+      "images": [],
+      "tech": [
+        "Positioning",
+        "Audience messaging",
+        "Copywriting"
+      ],
+      "platforms": [],
+      "link": "https://moreganooooo.github.io/CuripodApplication/curipod_answers.html",
+      "category": "EdTech writing sample",
+      "roles": [
+        "marketing",
+        "sales-ops",
+        "creative"
+      ]
+    },
+    {
+      "title": "Resume Builder",
+      "description": "After spending most of a day getting one application right, I built a way to reuse that work. The toolkit draws on a bank of verified accomplishments to tailor each application.",
+      "images": [],
+      "tech": [
+        "Workflow design",
+        "Documentation",
+        "Python"
+      ],
+      "platforms": [],
+      "link": "https://github.com/moreganooooo/resume-builder",
+      "category": "Open-source workflow tool",
+      "roles": [
+        "sales-ops",
+        "admin"
+      ]
+    },
+    {
+      "title": "Charm Studio",
+      "description": "Try a visual editor for terminal interfaces. Change the spacing in a starter layout, see how it fits different terminal sizes, and export the Go code.",
+      "images": [],
+      "tech": [
+        "Interaction design",
+        "Go",
+        "WebAssembly"
+      ],
+      "platforms": [],
+      "link": "https://moreganooooo.github.io/charm-studio/",
+      "category": "Interactive design tool",
+      "roles": [
+        "creative"
+      ]
     }
   ]
 }

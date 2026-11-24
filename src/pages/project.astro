@@ -1,41 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/nav.astro";
 ---
 
-<Layout title="Project — Morgan Escott">
-  <Nav />
+<Layout title="Making school outreach easier to teach | Morgan Escott">
+  <article class="mx-auto max-w-3xl px-4 py-16 md:py-24">
+    <a class="text-gray underline underline-offset-4 hover:text-white" href="/#projects">← All projects</a>
 
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-    <div class="reveal-content" style="animation-delay: 200ms;">
-      <span class="text-accent text-[11px] uppercase tracking-widest font-body">Coming Soon</span>
-
-      <h1 class="text-5xl md:text-7xl font-heading-display text-white mt-4 mb-6">
-        Project In Progress
-      </h1>
-
-      <p class="text-gray font-body text-base max-w-md mx-auto leading-relaxed mb-12">
-        This project page is on its way. Check back soon — something good is being built here.
+    <header class="case-heading mt-10 rounded-2xl border border-white/10 p-6 md:p-10">
+      <p class="text-sm text-white/80">Treering · Sales enablement</p>
+      <h1 class="mt-3 text-4xl font-heading text-white md:text-6xl">Making school outreach easier to teach</h1>
+      <p class="mt-5 max-w-prose text-lg leading-relaxed text-white/90">
+        A rep could know exactly what they wanted to say to a school and still need help finding
+        the right email sequence. At Treering, part of my job was getting that knowledge out of
+        my head and into tools the whole team could use.
       </p>
+    </header>
 
-      <a
-        href="/#projects"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 text-white font-body text-sm tracking-wide transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:shadow-[0_0_20px_oklch(0.72_0.18_35/0.2)]"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z"/>
-        </svg>
-        Back to Projects
-      </a>
+    <div class="case-copy mt-10 space-y-9">
+      <section>
+        <h2>Start with the reader</h2>
+        <p>For a yearlong email series, I segmented messages by school level and the reader’s role.
+          That distinction mattered when a rep sat down to write. Knowing a contact worked at a school
+          was only a starting point. Which part of the yearbook did that person actually handle?</p>
+      </section>
+      <section>
+        <h2>Make the work findable</h2>
+        <p>I reorganized 129 existing Outreach sequences, added tags, and documented how to use the
+          library. I also created a 14-category campaign QA checklist so reviewing a campaign before
+          launch was a process a teammate could repeat.</p>
+      </section>
+      <section>
+        <h2>Give new reps somewhere to look</h2>
+        <p>I built an internal onboarding site that walked through browser setup, Salesforce tags,
+          and outbound workflows, with diagrams and team resources. It became part of formal
+          onboarding. I trained more than 20 teammates on Salesforce and Outreach, and the guide
+          gave people somewhere to return to after a workshop.</p>
+      </section>
+      <a class="inline-block text-white underline underline-offset-4" href="https://moreganooooo.github.io/CuripodApplication/#stories">Read my original field stories →</a>
     </div>
-
-    <!-- Decorative accent line -->
-    <div class="reveal-content absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-linear-to-b from-accent/40 to-transparent" style="animation-delay: 600ms;"></div>
-  </section>
+  </article>
 </Layout>
 
 <style>
-  section {
-    position: relative;
+  .case-heading {
+    background: radial-gradient(ellipse at top right, #82502d75, transparent 65%),
+      linear-gradient(125deg, #281334, #58213e);
+  }
+  .case-copy h2 {
+    color: white;
+    font: 1.65rem/1.25 var(--font-heading);
+    margin-bottom: 0.6rem;
+  }
+  .case-copy p {
+    color: #ffffffcf;
+    line-height: 1.75;
   }
 </style>

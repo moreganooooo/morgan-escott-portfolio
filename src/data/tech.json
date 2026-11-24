@@ -1,35 +1,80 @@
 {
   "categories": [
     {
-      "title": "Mobile Development",
+      "title": "Sales and enablement",
       "skills": [
-        { "name": "Flutter", "level": 3, "icon": "skill-icons:flutter-dark", "roles": ["all"] },
-        { "name": "Dart", "level": 3, "icon": "skill-icons:dart-dark", "roles": ["all"] },
-        { "name": "Kotlin", "level": 1, "icon": "skill-icons:kotlin-dark", "roles": ["all"] }
+        {
+          "name": "Salesforce",
+          "icon": "mdi:cloud-outline",
+          "roles": [
+            "sales-ops",
+            "admin"
+          ]
+        },
+        {
+          "name": "Outreach",
+          "icon": "mdi:email-outline",
+          "roles": [
+            "sales-ops",
+            "marketing"
+          ]
+        }
       ]
     },
     {
-      "title": "Frontend",
+      "title": "Digital content",
       "skills": [
-        { "name": "Astro", "level": 2, "icon": "skill-icons:astro", "roles": ["all"] },
-        { "name": "HTML", "level": 2, "icon": "skill-icons:html", "roles": ["all"] },
-        { "name": "CSS", "level": 2, "icon": "skill-icons:css", "roles": ["all"] },
-        { "name": "Tailwind CSS", "level": 1, "icon": "skill-icons:tailwindcss-dark", "roles": ["all"] }
+        {
+          "name": "WordPress",
+          "icon": "mdi:wordpress",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Google Analytics",
+          "icon": "mdi:chart-line",
+          "roles": [
+            "marketing"
+          ]
+        },
+        {
+          "name": "Google Ads",
+          "icon": "mdi:bullhorn-outline",
+          "roles": [
+            "marketing"
+          ]
+        }
       ]
     },
     {
-      "title": "Backend",
+      "title": "Design and production",
       "skills": [
-        { "name": "FastAPI", "level": 2, "icon": "skill-icons:fastapi", "roles": ["all"] },
-        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark", "roles": ["all"] },
-        { "name": "Firebase", "level": 3, "icon": "vscode-icons:file-type-firebase", "roles": ["all"] }
-      ]
-    },
-    {
-      "title": "Database",
-      "skills": [
-        { "name": "SQLite", "level": 3, "icon": "skill-icons:sqlite", "roles": ["all"] },
-        { "name": "PostgreSQL", "level": 2, "icon": "skill-icons:postgresql-dark", "roles": ["all"] }
+        {
+          "name": "Adobe InDesign",
+          "icon": "mdi:book-open-page-variant",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Adobe Illustrator",
+          "icon": "mdi:pen",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Adobe Photoshop",
+          "icon": "mdi:image-outline",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        }
       ]
     }
   ]

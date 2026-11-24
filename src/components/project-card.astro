@@ -4,7 +4,8 @@ import { Icon } from 'astro-icon/components';
 interface Project {
   title: string;
   description: string;
-  images: string[];
+  images?: string[];
+  roles?: string[];
   tech: string[];
   platforms: string[];
   link: string;
@@ -16,20 +17,21 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const isSlider = project.images.length > 1;
+const images = project.images ?? [];
+const isSlider = images.length > 1;
 ---
 
 <a
   href={project.link}
   target={project.link.startsWith('http') ? '_blank' : '_self'}
   class="project-card group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-500 block"
-  data-roles="all"
+  data-roles={(project.roles ?? ["all"]).join(",")}
 >
-  <div class="aspect-video overflow-hidden relative bg-[#180a30]">
+  {images.length > 0 && <div class="aspect-video overflow-hidden relative bg-[#180a30]">
     <div class="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
 
     <div class={`w-full h-full relative ${isSlider ? 'image-slider' : ''}`}>
-      {project.images.map((img, index) => (
+      {images.map((img, index) => (
         <img
           src={img}
           alt={`${project.title} screenshot ${index + 1}`}
@@ -46,7 +48,7 @@ const isSlider = project.images.length > 1;
         </div>
       ))}
     </div>
-  </div>
+  </div>}
 
   <div class="p-6 space-y-4">
     <div>
@@ -54,7 +56,7 @@ const isSlider = project.images.length > 1;
       <h3 class="text-xl font-heading text-white mt-1">{project.title}</h3>
     </div>
 
-    <p class="text-gray-400 text-sm font-body line-clamp-3">
+    <p class="text-gray-400 text-sm font-body">
       {project.description}
     </p>
 
