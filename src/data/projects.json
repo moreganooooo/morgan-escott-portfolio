@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "title": "Making school outreach easier to teach",
+      "description": "At Treering, I organized 129 Outreach sequences and built a guide for new reps. Here’s how the messaging, tags, and training fit together.",
+      "images": [],
+      "tech": [
+        "Sales enablement",
+        "Campaign QA",
+        "Documentation"
+      ],
+      "platforms": [],
+      "link": "/project/",
+      "category": "Treering case study",
+      "roles": [
+        "sales-ops",
+        "marketing",
+        "admin"
+      ]
+    },
+    {
       "title": "One product, three school audiences",
       "description": "For a Curipod job application, I wrote three ways to introduce the same classroom tool. Read the pitches for a teacher, a technology director, and a curriculum director.",
       "images": [],

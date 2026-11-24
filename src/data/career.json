@@ -14,14 +14,26 @@
     },
     {
       "company": "Element 8 / Strategy",
-      "role": "Digital marketing and web content",
-      "period": "",
+      "role": "Graphic design and digital marketing",
+      "period": "2011",
       "type": "",
-      "description": "I built pages in WordPress, prepared media, and arranged copy and page elements. My work also included SEO research and working with Google Analytics and Google Ads.",
+      "description": "I designed for print and the web, from apparel and printed pieces to pages built in WordPress. I prepared files for print vendors, presented designs to stakeholders, and used Google Analytics and Google Ads in my digital work.",
       "skills": [
+        "Print production",
         "WordPress",
-        "SEO",
         "Google Analytics"
+      ]
+    },
+    {
+      "company": "VML",
+      "role": "Copywriting intern",
+      "period": "2010",
+      "type": "Internship",
+      "description": "I wrote a six-email nurture campaign for SAP and worked with senior creatives on campaign pitches. My projects also included SEO research and landing page copy.",
+      "skills": [
+        "Copywriting",
+        "Email campaigns",
+        "SEO research"
       ]
     }
   ]
