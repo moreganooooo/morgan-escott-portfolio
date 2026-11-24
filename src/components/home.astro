@@ -36,7 +36,7 @@ if (isApiLive && BASE_URL) {
   data = localData as ProfileData;
 }
 
-const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
+const { name, photoUrl, introHtml, resumeUrl, socials } = data;
 ---
 
 <section id="home" class="flex flex-col items-center justify-center section-container md:pt-30 gap-1 min-h-[80vh] text-center">
@@ -69,10 +69,9 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
 
   <div class="mt-8 mb-4 reveal-content" style="animation-delay: 400ms;">
     <a
-      href={resumeUrl}
-      data-resume-link
-      target="_blank"
-      rel="noopener noreferrer"
+      href={resumeUrl || "#projects"}
+      target={resumeUrl ? "_blank" : undefined}
+      rel={resumeUrl ? "noopener noreferrer" : undefined}
       class="group relative inline-flex items-center justify-center px-10 py-2 bg-white/5 border border-white/10 rounded-full text-white font-body transition-all duration-300 shadow-[0_0_20px_oklch(0.72_0.18_35/0.3)]
              
                                                     
@@ -81,7 +80,7 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
     >
       <div class="flex flex-col items-center justify-center text-center">
         <span class="tracking-wide text-sm md:text-base font-medium transition-transform duration-300 md:translate-y-2 md:group-hover:translate-y-0">
-          View Resume
+          {resumeUrl ? "View résumé" : "Explore my work"}
         </span>
         
         <span class="text-[10px] text-gray-400 font-light whitespace-nowrap transition-all duration-300 
@@ -89,7 +88,7 @@ const { name, photoUrl, intro, introHtml, resumeUrl, socials } = data;
                      opacity-100 translate-y-0 
                      /* Desktop: Hidden until hover */
                      md:opacity-0 md:translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0">
-          Downloads PDF file
+          {resumeUrl ? "PDF document" : "Selected projects"}
         </span>
       </div>
       

@@ -4,9 +4,9 @@ import localTechData from '../data/tech.json';
 
 interface Skill {
   name: string;
-  level: number;
+  level?: number;
   icon: string;
-  roles: string[];
+  roles?: string[];
 }
 
 interface Category {
@@ -28,6 +28,7 @@ try {
 } catch {
   categories = localTechData.categories;
 }
+const hasRatings = categories.some(category => category.skills.some(skill => typeof skill.level === "number"));
 ---
 
 <section id="tech" class="section-container overflow-hidden">
@@ -35,14 +36,14 @@ try {
     <div class="tech-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
       <div>
         <h2 class="text-3xl md:text-4xl font-heading text-white mb-2 flex items-center gap-4">
-          <span class="text-accent">/</span> Tech Stack
+          <span class="text-accent">/</span> Tools
         </h2>
         <p class="text-gray font-body text-sm max-w-md">
-          Breakdown of my technical skills, categorized by domain and proficiency
+          The tools I’ve used for outreach, publishing, and campaign measurement.
         </p>
       </div>
 
-      <div class="flex flex-wrap gap-4 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+      {hasRatings && <div class="flex flex-wrap gap-4 p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
         {[
           { label: "Expert", level: 3 },
           { label: "Proficient", level: 2 },
@@ -60,7 +61,7 @@ try {
             <span class="text-[10px] uppercase tracking-wider text-white/60">{item.label}</span>
           </div>
         ))}
-      </div>
+      </div>}
     </div>
 
     <div class="space-y-10">
@@ -73,7 +74,7 @@ try {
           <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-5 sm:gap-8">
             {category.skills.map((skill) => (
               /* 'skill-card' and 'opacity-0' class already maintain reveal animation */
-              <div class="skill-card opacity-0 group relative flex items-stretch min-h-14 rounded-xl bg-white/5 border border-white/10 hover:border-accent/40 hover:bg-white/8 transition-all duration-300" data-roles={skill.roles.join(', ')}>
+              <div class="skill-card opacity-0 group relative flex items-stretch min-h-14 rounded-xl bg-white/5 border border-white/10 hover:border-accent/40 hover:bg-white/8 transition-all duration-300" data-roles={(skill.roles ?? ['all']).join(', ')}>
                 
                 <div class="shrink-0 w-12 flex items-center justify-center rounded-l-xl bg-white/5 transition-colors group-hover:bg-accent/15">
                   <Icon name={skill.icon} class="w-7 h-7 group-hover:scale-110 transition-transform" />
@@ -85,18 +86,18 @@ try {
                   </span>
                 </div>
 
-                <div class="absolute -bottom-2 -right-1 z-10 flex gap-0 px-1 py-0.5 bg-container rounded-md border border-white/10 shadow-lg group-hover:border-accent/30 transition-all">
+                {typeof skill.level === "number" && <div class="absolute -bottom-2 -right-1 z-10 flex gap-0 px-1 py-0.5 bg-container rounded-md border border-white/10 shadow-lg group-hover:border-accent/30 transition-all">
                   {[1, 2, 3].map((star) => (
                     <Icon 
                       name="mdi:star" 
                       class={`w-3 h-3 transition-colors duration-500 ${
-                        star <= skill.level 
+                        star <= (skill.level ?? 0) 
                           ? 'text-accent drop-shadow-[0_0_3px_var(--color-accent)]' 
                           : 'text-gray-600'
                       }`} 
                     />
                   ))}
-                </div>
+                </div>}
               </div>
             ))}
           </div>

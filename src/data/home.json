@@ -1,10 +1,10 @@
 {
   "name": "Morgan Escott",
   "photoUrl": "morgan-profile.png",
-  "intro": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
-  "introHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-white font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-white font-bold'>efficient</span>, <span class='text-white font-bold'>high-impact</span> solutions.",
-  "webpageTitle": "Morgan Escott",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
+  "intro": "I’m Morgan, a marketer with a background in sales development, writing, and design. At Treering, I helped sales reps find the right words for a school outreach email. These days, I also build tools for the parts of work I wish were easier.",
+  "introHtml": "I’m Morgan, a marketer with a background in sales development, writing, and design. At Treering, I helped sales reps find the right words for a school outreach email. These days, I also build tools for the parts of work I wish were easier.",
+  "webpageTitle": "Morgan Escott | Marketing & Sales Enablement",
+  "resumeUrl": "",
   "socials": [
     {
       "name": "LinkedIn",
