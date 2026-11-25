@@ -1,0 +1,22 @@
+---
+import WorkArrow from '../assets/work-arrow.svg';
+import ContactSparkles from '../assets/contact-sparkles.svg';
+const headline = 'Lifecycle Campaigns → Email Marketing → Copy → Design → CRM → Sales Strategy';
+---
+<section id="home" class="hero-track" aria-label="Areas of work">
+  <div class="desk-hero">
+    <h1><span class="headline-run">{headline}<span class="headline-join" aria-hidden="true"> → </span></span><span class="headline-run headline-repeat" aria-hidden="true">{headline}<span> → </span></span></h1>
+    <div class="desk-foreground" aria-hidden="true"></div>
+    <button class="headline-control motion-control" type="button" hidden>Pause headline</button>
+    <div class="hero-actions"><a class="button" href="#projects">My work <WorkArrow aria-hidden="true" /></a><a class="button plum-button" href="#contact">Contact me <ContactSparkles aria-hidden="true" /></a></div>
+  </div>
+</section>
+<script>
+  const hero = document.querySelector<HTMLElement>('.desk-hero')!;
+  const control = hero.querySelector('button')!;
+  control.hidden = false;
+  control.addEventListener('click', () => {
+    const paused = hero.toggleAttribute('data-paused');
+    control.textContent = paused ? 'Play headline' : 'Pause headline';
+  });
+</script>

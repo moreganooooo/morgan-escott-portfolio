@@ -1,0 +1,20 @@
+{
+  "name": "Morgan Escott",
+  "photoUrl": "morgan-profile.png",
+  "intro": "I like to write pretty things. I’m also the CRM whisperer who makes sure the right person gets the email. I’ve written copy at VML, designed print and web materials at Element 8, and helped a sales team at Treering find the right words for educators.",
+  "introHtml": "<strong class=\"text-white\">I like to write pretty things.</strong> I’m also the CRM whisperer who makes sure the right person gets the email. I’ve written copy at VML, designed print and web materials at Element 8, and helped a sales team at Treering find the right words for educators.",
+  "webpageTitle": "Morgan Escott | Marketing & Sales Enablement",
+  "resumeUrl": "",
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/morganescott",
+      "icon": "mdi:linkedin"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:escott.morgan@gmail.com",
+      "icon": "mdi:email"
+    }
+  ]
+}

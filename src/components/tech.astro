@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components';
+import localTechData from '../data/tech.json';
+
+interface Skill {
+  name: string;
+  level?: number;
+  icon: string;
+  roles?: string[];
+}
+
+interface Category {
+  title: string;
+  skills: Skill[];
+}
+
+const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+let categories: Category[];
+
+try {
+  if (BASE_URL) {
+    const response = await fetch(`${BASE_URL}/tech`);
+    const data = await response.json();
+    categories = data.categories;
+  } else {
+    categories = localTechData.categories;
+  }
+} catch {
+  categories = localTechData.categories;
+}
+
+---
+<section class="tool-section band" id="tech">
+  <div class="wrap">
+    <h2>Tools I use</h2>
+    <div class="tool-grid">{categories.map(group => <div>
+      <h3>{group.title}</h3>
+      <ul>{group.skills.map(skill => <li data-roles={(skill.roles ?? ['all']).join(',')}>
+        <Icon name={skill.icon} /> {skill.name}
+        {typeof skill.level === 'number' && <small>{skill.level}/3</small>}
+      </li>)}</ul>
+    </div>)}</div>
+  </div>
+</section>

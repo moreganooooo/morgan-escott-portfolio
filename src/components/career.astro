@@ -1,0 +1,14 @@
+---
+import career from '../data/career.json';
+---
+<section class="band experience" id="career">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="career-list">
+      {career.items.map(item => <article>
+        <div><h3>{item.company}</h3>{item.period && <p>{item.period}</p>}</div>
+        <div><h4>{item.role}</h4><p>{item.description}</p><ul class="tags">{item.skills.map(skill => <li>{skill}</li>)}</ul></div>
+      </article>)}
+    </div>
+  </div>
+</section>

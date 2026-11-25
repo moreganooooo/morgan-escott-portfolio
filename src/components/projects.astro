@@ -1,0 +1,25 @@
+---
+import ProjectCard from './project-card.astro';
+import data from '../data/projects.json';
+---
+<section class="work band" id="projects">
+  <div class="wrap">
+    <div class="work-heading">
+      <h2>Selected work<span>.</span></h2>
+      <label class="role-picker" hidden>Highlight by role
+        <select id="role-focus">
+          <option value="general">All roles</option>
+          <option value="sales-ops">Sales Operations &amp; CRM</option>
+          <option value="marketing">Marketing &amp; Copywriting</option>
+          <option value="creative">Branding &amp; Creative</option>
+          <option value="admin">Executive &amp; Admin Support</option>
+        </select>
+      </label>
+    </div>
+    <div class="work-list">{data.items.map(project => <ProjectCard project={project} />)}</div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/roleSwitcher.js';
+</script>
