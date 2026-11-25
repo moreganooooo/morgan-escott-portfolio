@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/nav.astro";
+import Opening from "../components/opening.astro";
 import Home from "../components/home.astro";
 import Tech from "../components/tech.astro";
 import Projects from "../components/projects.astro";
@@ -12,10 +12,10 @@ const { webpageTitle } = localData;
 ---
 
 <Layout title={webpageTitle}>
-  <Nav />
+  <Opening />
   <Home />
-  <Career />
   <Projects />
+  <Career />
   <Tech />
   <Contact />
 </Layout>

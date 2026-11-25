@@ -3,7 +3,9 @@
     {
       "title": "Making school outreach easier to teach",
       "description": "At Treering, I organized 129 Outreach sequences and built a guide for new reps. Here’s how the messaging, tags, and training fit together.",
-      "images": [],
+      "images": [
+        "/neon/systems.webp"
+      ],
       "tech": [
         "Sales enablement",
         "Campaign QA",
@@ -11,7 +13,7 @@
       ],
       "platforms": [],
       "link": "/project/",
-      "category": "Treering case study",
+      "category": "Systems & Strategy",
       "roles": [
         "sales-ops",
         "marketing",
@@ -21,7 +23,9 @@
     {
       "title": "One product, three school audiences",
       "description": "For a Curipod job application, I wrote three ways to introduce the same classroom tool. Read the pitches for a teacher, a technology director, and a curriculum director.",
-      "images": [],
+      "images": [
+        "/neon/voice.webp"
+      ],
       "tech": [
         "Positioning",
         "Audience messaging",
@@ -29,7 +33,7 @@
       ],
       "platforms": [],
       "link": "https://moreganooooo.github.io/CuripodApplication/curipod_answers.html",
-      "category": "EdTech writing sample",
+      "category": "Copy & Voice",
       "roles": [
         "marketing",
         "sales-ops",
