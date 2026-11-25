@@ -169,6 +169,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
   .tool-grid { gap: 2rem; }
 }
 @media (max-width: 370px) {
+  .intro h1 { font-size: min(15vw,18svh); }
   .masthead-inner { gap: .45rem; width: calc(100% - 1rem); }
   nav { gap: .5rem; }
   .nav-contact span { display: none; }
