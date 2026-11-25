@@ -21,52 +21,18 @@ const images = project.images ?? [];
 const isSlider = images.length > 1;
 ---
 
-<a
-  href={project.link}
-  target={project.link.startsWith('http') ? '_blank' : '_self'}
-  class="project-card group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-500 block"
-  data-roles={(project.roles ?? ["all"]).join(",")}
->
-  {images.length > 0 && <div class="aspect-video overflow-hidden relative bg-[#180a30]">
-    <div class="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
-
-    <div class={`w-full h-full relative ${isSlider ? 'image-slider' : ''}`}>
-      {images.map((img, index) => (
-        <img
-          src={img}
-          alt={`${project.title} screenshot ${index + 1}`}
-          onerror="this.onerror=null;this.src='placeholder.jpeg';"
-          class={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${index === 0 ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'}`}
-        />
-      ))}
-    </div>
-
-    <div class="absolute top-3 right-3 flex gap-2 z-20">
-      {project.platforms.map((p) => (
-        <div class="p-1.5 bg-black/60 backdrop-blur-md rounded-lg border border-white/10 text-white/80">
-          <Icon name={`mdi:${p}`} class="w-4 h-4" />
-        </div>
-      ))}
-    </div>
+<a class:list={['work-card', { featured: images.length > 0 }]} href={project.link}
+   target={project.link.startsWith('http') ? '_blank' : undefined} rel={project.link.startsWith('http') ? 'noopener' : undefined}
+   data-roles={(project.roles ?? ['all']).join(',')}>
+  {images.length > 0 && <div class:list={['cover', { 'image-slider': isSlider }]}>
+    {images.map((src, index) => <img src={src} loading="lazy" alt="" class={index ? 'opacity-0' : 'opacity-100'} />)}
+    {project.platforms?.map(platform => <Icon name={`mdi:${platform}`} class="platform-icon" />)}
   </div>}
-
-  <div class="p-6 space-y-4">
-    <div>
-      <span class="text-accent text-[10px] uppercase tracking-widest">{project.category}</span>
-      <h3 class="text-xl font-heading text-white mt-1">{project.title}</h3>
-    </div>
-
-    <p class="text-gray-400 text-sm font-body">
-      {project.description}
-    </p>
-
-    <div class="flex flex-wrap gap-2 pt-2">
-      {project.tech.map((t) => (
-        <span class="px-2 py-1 bg-white/5 rounded-md text-[10px] text-white/60 border border-white/5">
-          {t}
-        </span>
-      ))}
-    </div>
+  <div class="card-copy">
+    <p class="kicker">{project.category}</p>
+    <h3>{project.title}</h3><p>{project.description}</p>
+    <ul class="tags">{project.tech.map(tag => <li>{tag}</li>)}</ul>
+    <span class="card-arrow" aria-hidden="true">↗</span>
   </div>
 </a>
 
@@ -76,7 +42,7 @@ const isSlider = images.length > 1;
     
     sliders.forEach(slider => {
       const images = slider.querySelectorAll('img');
-      if (images.length <= 1) return;
+      if (images.length <= 1 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       let currentIndex = 0;
       setInterval(() => {
@@ -97,22 +63,3 @@ const isSlider = images.length > 1;
   initSliders();
   document.addEventListener('astro:after-swap', initSliders);
 </script>
-
-<style is:global>
-  .project-card {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(40px);
-    transition: 
-      opacity 0.8s ease-out, 
-      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-      visibility 0.8s;
-    will-change: transform, opacity;
-  }
-
-  .project-card.reveal {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-  }
-</style>

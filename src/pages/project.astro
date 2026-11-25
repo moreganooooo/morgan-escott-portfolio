@@ -3,20 +3,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Making school outreach easier to teach | Morgan Escott">
-  <article class="mx-auto max-w-3xl px-4 py-16 md:py-24">
-    <a class="text-gray underline underline-offset-4 hover:text-white" href="/#projects">← All projects</a>
+  <article class="case-study"><div class="case-inner">
+    <a class="back-link" href="/home/#projects">← All projects</a>
 
-    <header class="case-heading mt-10 rounded-2xl border border-white/10 p-6 md:p-10">
-      <p class="text-sm text-white/80">Treering · Sales enablement</p>
-      <h1 class="mt-3 text-4xl font-heading text-white md:text-6xl">Making school outreach easier to teach</h1>
-      <p class="mt-5 max-w-prose text-lg leading-relaxed text-white/90">
+    <header class="case-heading">
+      <p class="kicker">Treering · Sales enablement</p>
+      <h1>Making school outreach easier to teach</h1>
+      <p>
         A rep could know exactly what they wanted to say to a school and still need help finding
         the right email sequence. At Treering, part of my job was getting that knowledge out of
         my head and into tools the whole team could use.
       </p>
     </header>
 
-    <div class="case-copy mt-10 space-y-9">
+    <div class="case-copy">
       <section>
         <h2>Start with the reader</h2>
         <p>For a yearlong email series, I segmented messages by school level and the reader’s role.
@@ -36,23 +36,7 @@ import Layout from "../layouts/Layout.astro";
           onboarding. I trained more than 20 teammates on Salesforce and Outreach, and the guide
           gave people somewhere to return to after a workshop.</p>
       </section>
-      <a class="inline-block text-white underline underline-offset-4" href="https://moreganooooo.github.io/CuripodApplication/#stories">Read my original field stories →</a>
+      <a class="back-link" href="https://moreganooooo.github.io/CuripodApplication/#stories">Read my original field stories →</a>
     </div>
-  </article>
+  </div></article>
 </Layout>
-
-<style>
-  .case-heading {
-    background: radial-gradient(ellipse at top right, #82502d75, transparent 65%),
-      linear-gradient(125deg, #281334, #58213e);
-  }
-  .case-copy h2 {
-    color: white;
-    font: 1.65rem/1.25 var(--font-heading);
-    margin-bottom: 0.6rem;
-  }
-  .case-copy p {
-    color: #ffffffcf;
-    line-height: 1.75;
-  }
-</style>

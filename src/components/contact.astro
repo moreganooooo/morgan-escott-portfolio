@@ -1,132 +1,17 @@
 ---
-import { Icon } from 'astro-icon/components';
-import localData from '../data/home.json';
-
+import Starburst from '../assets/starburst.svg';
+import home from '../data/home.json';
 ---
-
-<section id="contact" class="section-container">
-  <div class="container mx-auto">
-    <div class="space-y-12">
-      <div class="contact-header opacity-0 mb-16">
-        <h2 class="text-3xl md:text-4xl font-heading text-white mb-2 flex items-center gap-4">
-            <span class="text-accent">/</span> Contact Me
-          </h2>
-        <p class="text-gray font-body text-sm max-w-md">
-          Feel free to reach out. I'm always open to discussing new projects and opportunities.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-        {localData.socials.map((social) => (
-          <!-- Added 'contact-card' and 'opacity-0' here -->
-          <a 
-            href={social.url} 
-            target="_blank" 
-            class="contact-card opacity-0 group p-8 bg-white/5 border border-white/10 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300"
-          >
-            <Icon 
-              name={social.icon} 
-              class="w-10 h-10 text-accent mb-4 mx-auto group-hover:scale-110 transition-transform" 
-            />
-            <h3 class="text-white mb-1">{social.name}</h3>
-            <p class="text-gray-400 text-xs truncate px-2">
-              {social.url.replace('https://', '').replace('mailto:', '').replace('wa.me/', '+')}
-            </p>
-          </a>
-        ))}
-      </div>
-
-      <!-- /* FOOTER */ -->
-      <div class="contact-footer opacity-0 pt-20 border-t border-white/5">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-gray-400 text-sm font-body order-2 md:order-1">
-            {localData.name} © 2026
-          </p>
-          <div class="flex items-center flex-wrap justify-center gap-3 text-gray-400 text-xs font-body order-1 md:order-2">
-            <span>Built using </span>
-            <a 
-              href="https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/" 
-              target="_blank" 
-              class="text-white hover:text-accent transition-colors underline decoration-white/30 underline-offset-4 hover:decoration-accent"
-            >
-              Career Portfolio Theme
-            </a>
-            <span class="text-gray-500 hidden sm:inline">•</span>
-            <div class="flex gap-4">
-              <a href="https://astro.build" target="_blank" class="hover:text-accent transition-colors flex items-center gap-1.5 group">
-                <Icon name="skill-icons:astro" class="w-4 h-4 group-hover:drop-shadow-[0_0_5px_var(--color-accent)]" />
-                <span>Astro</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
+<footer id="contact" class="contact band">
+  <div class="wrap">
+    <figure class="quote">
+      <Starburst class="quote-star" aria-hidden="true" />
+      <blockquote>“Working with Morgan is a joy and the work she produces in her areas of expertise (writing, designing, organizing, and coaching through a marketing messaging or designing discovery process) meets and usually exceeds client expectations.”</blockquote>
+      <figcaption>Ed Roche · Founding Partner, Strategy, LLC</figcaption>
+    </figure>
+    <div class="contact-row"><h2>Let’s talk<span>.</span></h2>
+      <div class="inline-links">{home.socials.map(s => <a href={s.url}>{s.name} ↗</a>)}</div>
     </div>
+    <div class="credits"><span>{home.name} · Williamsville, NY</span><a href="#home">Back to top ↑</a></div>
   </div>
-</section>
-
-<style>
-  /* Header & Footer Initial State */
-  .contact-header,
-  .contact-footer {
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Cards Initial State */
-  .contact-card {
-    transform: translateY(20px) scale(0.95);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  /* Shared Revealed State */
-  .contact-header.reveal,
-  .contact-card.reveal,
-  .contact-footer.reveal {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1);
-  }
-</style>
-
-<script>
-  const revealContact = () => {
-    const header = document.querySelector('.contact-header');
-    const footer = document.querySelector('.contact-footer');
-    const cards = document.querySelectorAll('.contact-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = entry.target as HTMLElement;
-
-          if (target.classList.contains('contact-card')) {
-            const index = Array.from(cards).indexOf(target);
-            // Stagger effect for the 4-column grid
-            setTimeout(() => {
-              target.classList.add('reveal');
-            }, (index % 4) * 150);
-          } else {
-            // Header and Footer reveal immediately
-            target.classList.add('reveal');
-          }
-          
-          observer.unobserve(target);
-        }
-      });
-    }, { 
-      threshold: 0.15,
-      rootMargin: '0px 0px -10px 0px'
-    });
-
-    if (header) observer.observe(header);
-    if (footer) observer.observe(footer);
-    cards.forEach(card => observer.observe(card));
-  }
-  
-  // Runs on initial load
-  window.addEventListener('load', revealContact);
-  
-  // Support for Astro View Transitions
-  document.addEventListener('astro:after-swap', revealContact);
-</script>
+</footer>
