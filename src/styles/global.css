@@ -48,10 +48,12 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .build-word::before { z-index: -1; height: 20%; bottom: 0; background: #fdff00; }
 .beautiful-word::after { height: .085em; bottom: -.055em; background: var(--orange); transform-origin: left; transform: scaleX(0); }
 .beautiful-word:is(:hover,:focus-visible)::after { transform: scaleX(1); }
+.intro-last-line { display: inline-flex; align-items: center; gap: .19em; white-space: nowrap; }
 .intro-controls { position: absolute; bottom: 1.4rem; right: 5vw; gap: .5rem; }
 .enter, .button, .motion-control { padding: .65rem 1.2rem; border-radius: 2rem; line-height: 1.4; font-weight: 550; background: var(--plum); color: var(--paper); }
 .motion-control { background: var(--paper); color: var(--plum); cursor: pointer; font-size: .82rem; }
-.enter { display: grid; place-items: center; padding: 0; width: 3.5rem; height: 3.5rem; font-size: 2rem; line-height: 1; background: var(--rose); color: white; }
+.enter { display: grid; place-items: center; padding: 0; width: clamp(2.75rem, .48em, 5rem); aspect-ratio: 1; font-size: inherit; flex: none; line-height: 1; background: var(--rose); color: white; }
+.enter span { font: 550 clamp(1.6rem, 3vw, 3.2rem)/1 var(--display); }
 .skip-intro { font: 550 .9rem var(--display); background: var(--paper); color: var(--ink); border-radius: 2rem; padding: .65rem 1rem; }
 .desk-foreground { position: absolute; inset: 0; pointer-events: none; z-index: 1; background: url('/neon/desk-foreground.webp') center/cover no-repeat; }
 .hero-actions { z-index: 2; }
@@ -62,7 +64,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .quote-star { width: 2.5rem; height: 2.5rem; color: var(--plum); margin-bottom: .75rem; }
 .hero-track { background: var(--plum); }
 .desk-hero { position: relative; overflow: hidden; min-height: calc(100svh - var(--header)); display: grid; align-items: center; padding: 3.5rem 0 6rem; background: url('/neon/desk.webp') center/cover; }
-.desk-hero h1 { line-height: .98; font-size: clamp(2.7rem, 7.2vw, 8rem); color: var(--hero-orange); text-shadow: 0 1px 2px #5e1b5a66; font-weight: 400; letter-spacing: 0; font-style: italic; padding-inline: 5vw; }
+.desk-hero h1 { position: relative; z-index: 2; line-height: .98; font-size: clamp(2.7rem, 7.2vw, 8rem); color: var(--hero-orange); text-shadow: 0 1px 2px #5e1b5a66; font-weight: 400; letter-spacing: 0; font-style: italic; padding-inline: 5vw; }
 .hero-actions { position: absolute; bottom: 2rem; width: 100%; justify-content: center; gap: 1rem; }
 .button { background: var(--gold); color: var(--ink); }
 .plum-button { background: var(--plum); color: var(--paper); }
@@ -125,25 +127,33 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .case-copy h2 { font-size: clamp(1.8rem,3vw,2.5rem); margin-bottom: .65rem; letter-spacing: -.05em; }
 .back-link { color: #842153; font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
 @media (prefers-reduced-motion: no-preference) {
-  .film-started video { animation: fade-film 25s both; }
-  .film-started h1 { animation: reveal 3s 2s ease-in both; }
-  .film-started .ink-texture { animation: texture 25s both; }
-  .film-started:not(.film-running) :is(video,h1,.ink-texture) { animation-play-state: paused; }
-  .film-finished :is(video,.ink-texture) { display: none; }
-  .scroll-ready { height: 250svh; }
-  .scroll-ready .desk-hero { position: sticky; top: var(--header); height: calc(100svh - var(--header)); }
-  .scroll-ready h1 { position: absolute; top: 23%; left: 0; white-space: nowrap; width: max-content; }
   .work-card { transition: transform .25s; }
   .work-card:hover { transform: translateY(-.25rem); }
 }
-@keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fade-film { 0%,74% { opacity: 1; } 96%,100% { opacity: 0; } }
-@keyframes texture { 0%,74%,100% { opacity: 0; } 89% { opacity: .35; } }
+/* These first-paint styles also apply while the playback module is loading. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .intro video { opacity: var(--film-alpha, 1); }
+  .intro .ink-texture { opacity: var(--texture-alpha, 0); }
+  .intro h1 { opacity: var(--title-alpha, 0); visibility: hidden; }
+  .intro.title-visible h1, .intro.intro-settled h1 { visibility: visible; }
+  .intro .build-word::before { opacity: var(--marker-alpha, 0); }
+  .intro .enter { opacity: var(--arrow-alpha, 0); visibility: hidden; }
+  .intro.arrow-visible .enter, .intro.intro-settled .enter { visibility: visible; }
+  .intro.intro-settled :is(video, .ink-texture) { opacity: 0; transition: opacity .8s ease; }
+  .intro.intro-settled h1, .intro.intro-settled .enter { opacity: 1; transition: opacity 1.2s ease; }
+  .intro.intro-settled .build-word::before { opacity: 1; }
+
+  .desk-hero h1 { position: absolute; z-index: 0; left: 0; top: 23%; display: flex; width: max-content; padding: 0; white-space: nowrap; animation: drift 84s linear infinite; }
+  .headline-run { flex: none; padding-inline-start: 5vw; white-space: pre; }
+  .desk-hero .headline-repeat, .desk-hero .headline-join { display: inline; }
+  .desk-hero[data-paused] h1 { animation-play-state: paused; }
+}
 @media (prefers-reduced-motion: reduce) { .motion-control { display: none; } }
 @media (orientation: portrait) {
   .desk-hero, .desk-foreground { background-position: 14% center; }
 }
-.hero-track:not(.scroll-ready) h1 { position: relative; z-index: 2; }
+.headline-repeat, .headline-join { display: none; }
+.headline-control { position: absolute; z-index: 2; top: 1rem; right: 5vw; }
 @media (max-width: 680px) {
   :root { --header: 3.8rem; }
   nav { gap: .7rem; font-size: .83rem; }
@@ -171,9 +181,6 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .marquee-group span { padding-right: 1.2em; }
 .marquee-control { float: right; position: relative; z-index: 1; background: var(--plum); color: white; padding: .5em; border-radius: 50%; margin: .45rem; }
 @media (prefers-reduced-motion: no-preference) {
-  .intro:has(.enter[hidden]) .build-word::before { opacity: 0; }
-  .cue-ready .build-word::before { animation: reveal 1.5s both; }
-  .cue-ready .enter { animation: reveal 1s both; }
   .build-word::before { transition: height .35s cubic-bezier(.74,.22,.26,.96), bottom .35s cubic-bezier(.74,.22,.26,.96); }
   .build-word:hover::before { height: 100%; bottom: .055em; }
   .beautiful-word::after { transition: transform 1s cubic-bezier(.74,.22,.26,.96); }
@@ -181,7 +188,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
   .hero-actions a:is(:hover,:focus-visible) path { d: var(--to); }
   .star { animation: star-turn 7s linear infinite; }
   .quote-star { animation: star-flip 5s linear infinite; }
-  .about-marquee[data-playing="true"] .marquee-track { animation: drift 26s linear infinite; }
+  .about-marquee[data-playing="true"] .marquee-track { animation: drift 30s linear infinite; }
   .about-marquee[data-paused] .marquee-track { animation-play-state: paused; }
   .results dd.revealed { animation: rise-in 1.2s cubic-bezier(.65,0,.35,1) both; }
   @supports (animation-timeline: view()) {

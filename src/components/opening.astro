@@ -1,11 +1,10 @@
 <section id="intro" class="intro" aria-label="Introduction">
-  <video muted playsinline preload="none" data-src="/neon/ink.mp4" aria-hidden="true"></video>
+  <video muted playsinline preload="none" poster="/neon/ink-first-frame.webp" data-src="/neon/ink.mp4" aria-hidden="true"></video>
   <div class="ink-texture" aria-hidden="true"></div>
-  <h1>Let’s<br /><span class="build-word">build</span><br />something<br /><a class="beautiful-word" href="/home/">beautiful.</a></h1>
+  <h1>Let’s<br /><span class="build-word">build</span><br />something<br /><span class="intro-last-line"><a class="beautiful-word" href="/home/">beautiful.</a><a class="enter" href="/home/" aria-label="Enter the portfolio"><span aria-hidden="true">→</span></a></span></h1>
   <div class="intro-controls">
     <a class="skip-intro" href="/home/">Skip intro</a>
     <button type="button" hidden class="motion-control">Pause intro</button>
-    <a class="enter" href="/home/" aria-label="Let’s go to the portfolio"><span aria-hidden="true">→</span></a>
   </div>
 </section>
 <script>
@@ -13,57 +12,78 @@
   const video = intro.querySelector('video')!;
   const control = intro.querySelector('button')!;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  let inView = false;
+  let frame = 0;
+  let stallTimer = 0;
   let pausedByVisitor = false;
-  function syncMovie() {
-    if (!inView || pausedByVisitor || preference.matches || document.hidden) {
+  let settled = false;
+
+  // Smoothstep gives every fade a gentle start and finish on the film's own clock.
+  function fade(time: number, start: number, end: number) {
+    const x = Math.max(0, Math.min(1, (time - start) / (end - start)));
+    return x * x * (3 - 2 * x);
+  }
+  function draw() {
+    const time = video.currentTime;
+    intro.style.setProperty('--title-alpha', String(fade(time, 2, 6.2)));
+    intro.style.setProperty('--film-alpha', String(1 - fade(time, 18.5, 23.3)));
+    intro.style.setProperty('--texture-alpha', String(.3 * (fade(time, 18.5, 21.7) - fade(time, 21.7, 24))));
+    intro.style.setProperty('--marker-alpha', String(fade(time, 23, 24.45)));
+    intro.style.setProperty('--arrow-alpha', String(fade(time, 23.55, 25)));
+    intro.classList.toggle('title-visible', time > 2);
+    intro.classList.toggle('arrow-visible', time > 23.55);
+  }
+  function tick() {
+    draw();
+    frame = requestAnimationFrame(tick);
+  }
+  function stopClock() {
+    cancelAnimationFrame(frame);
+    clearTimeout(stallTimer);
+  }
+  function finish() {
+    settled = true;
+    stopClock();
+    intro.classList.add('intro-settled');
+    video.pause();
+    control.hidden = true;
+  }
+  function watchForPlayback() {
+    clearTimeout(stallTimer);
+    if (!document.hidden && !pausedByVisitor && !settled) {
+      stallTimer = window.setTimeout(finish, 8000);
+    }
+  }
+  function syncPlayback() {
+    if (settled) return;
+    if (preference.matches) return finish();
+    if (document.hidden || pausedByVisitor) {
+      stopClock();
       video.pause();
       return;
     }
-    if (video.ended) return;
     if (!video.hasAttribute('src')) video.src = video.dataset.src!;
+    watchForPlayback();
     video.play().catch(error => {
-      if (error.name === 'AbortError') return;
-      intro.classList.add('film-unavailable');
-      updateCue();
+      if (error.name !== 'AbortError') finish();
     });
   }
-  const enter = intro.querySelector<HTMLAnchorElement>('.enter')!;
-  function updateCue() {
-    const ready = preference.matches || video.currentTime >= 23
-      || video.error !== null || intro.classList.contains('film-unavailable');
-    intro.classList.toggle('cue-ready', ready);
-    enter.hidden = !ready;
-  }
-  video.addEventListener('timeupdate', updateCue);
-  video.addEventListener('error', updateCue);
   video.addEventListener('playing', () => {
-    intro.classList.remove('film-unavailable');
-    intro.classList.add('film-started', 'film-running');
-    updateCue();
+    stopClock();
+    if (settled || video.paused) return;
     control.hidden = false;
-    control.textContent = 'Pause intro';
+    tick();
   });
-  video.addEventListener('pause', () => {
-    intro.classList.remove('film-running');
-    control.textContent = 'Play intro';
-  });
-  video.addEventListener('ended', () => {
-    intro.classList.add('film-finished');
-    control.hidden = true;
-  });
+  video.addEventListener('waiting', () => { stopClock(); watchForPlayback(); });
+  video.addEventListener('pause', stopClock);
+  video.addEventListener('seeked', draw);
+  video.addEventListener('ended', finish);
+  video.addEventListener('error', finish);
   control.addEventListener('click', () => {
-    pausedByVisitor = !video.paused;
-    syncMovie();
+    pausedByVisitor = !pausedByVisitor;
+    control.textContent = pausedByVisitor ? 'Play intro' : 'Pause intro';
+    syncPlayback();
   });
-  new IntersectionObserver(([entry]) => {
-    inView = entry.isIntersecting;
-    syncMovie();
-  }).observe(intro);
-  document.addEventListener('visibilitychange', syncMovie);
-  preference.addEventListener('change', () => {
-    updateCue();
-    syncMovie();
-  });
-  updateCue();
+  document.addEventListener('visibilitychange', syncPlayback);
+  preference.addEventListener('change', syncPlayback);
+  syncPlayback();
 </script>
