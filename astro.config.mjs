@@ -16,7 +16,9 @@ const site =
 export default defineConfig({
   site,
   integrations: [
-    sitemap(),
+    sitemap({
+        filter: (page) => !page.includes('/admin'),
+    }),
     react(),
     tinaDirective(),
     icon(),
