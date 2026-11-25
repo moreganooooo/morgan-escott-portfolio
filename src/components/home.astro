@@ -1,0 +1,88 @@
+---
+import localData from '../data/home.json';
+
+//Data Definitions
+interface Social {
+  name: string;
+  url: string;
+  icon: string;
+}
+
+interface ProfileData {
+  name: string;
+  photoUrl: string;
+  intro: string;
+  introHtml: string;
+  resumeUrl: string;
+  socials: Social[];
+}
+
+const isApiLive = import.meta.env.PROD; // Auto true in production
+const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+
+let data: ProfileData; // data as ProfileData
+
+if (isApiLive && BASE_URL) {
+  try {
+    const response = await fetch(`${BASE_URL}/home`);
+    if (!response.ok) throw new Error('Network response was not ok');
+    data = await response.json();
+  } catch (error) {
+    console.error("API Fetch failed, falling back to mock data", error);
+    data = localData as ProfileData;
+  }
+} else {
+  data = localData as ProfileData;
+}
+
+const { name, photoUrl, introHtml, resumeUrl, socials } = data;
+// The profile also accepts media paths relative to the site's public directory.
+const fromSiteRoot = (url: string) => /^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url) ? url : '/' + url;
+---
+<div class="about-marquee">
+  <button class="marquee-control" type="button" hidden aria-label="Pause moving text" aria-pressed="false">Ⅱ</button>
+  <div class="marquee-track" aria-hidden="true">
+    {[0, 1].map(() => <div class="marquee-group">{[0, 1, 2].map(() => <span>Copy with heart. Strategy with style. ✴</span>)}</div>)}
+  </div>
+</div>
+<section id="about" class="about band">
+  <div class="wrap about-grid">
+    <div class="portrait"><img src={fromSiteRoot(photoUrl)} alt={name} loading="lazy" onerror="this.onerror=null;this.src='/placeholder.jpeg';" /></div>
+    <div>
+      <p class="kicker">About Morgan</p>
+      <h2>Copy with heart.<br /><em>Strategy with style.</em></h2>
+      <p class="bio" set:html={introHtml || data.intro} />
+      <div class="inline-links">
+        <a href="#career">My experience ↓</a>
+        {resumeUrl && <a href={fromSiteRoot(resumeUrl)}>View résumé ↗</a>}
+        {socials.filter(s => s.name === 'LinkedIn').map(s => <a href={s.url}>{s.name} ↗</a>)}
+      </div>
+    </div>
+  </div>
+  <dl class="wrap results">
+    <div><dt>Closed-won revenue from opportunities I generated</dt><dd>$1.5M+</dd></div>
+    <div><dt>Outreach sequences I reorganized</dt><dd>129</dd></div>
+    <div><dt>Teammates I trained on Salesforce and Outreach</dt><dd>20+</dd></div>
+  </dl>
+</section>
+
+<script>
+  const strip = document.querySelector<HTMLElement>('.about-marquee')!;
+  const toggle = strip.querySelector('button')!;
+  strip.dataset.playing = 'true';
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    const paused = strip.toggleAttribute('data-paused');
+    toggle.textContent = paused ? '▶' : 'Ⅱ';
+    toggle.setAttribute('aria-label', paused ? 'Play moving text' : 'Pause moving text');
+    toggle.setAttribute('aria-pressed', String(paused));
+  });
+  const reveal = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('revealed');
+      reveal.unobserve(entry.target);
+    }
+  });
+  document.querySelectorAll('.results dd').forEach(number => reveal.observe(number));
+</script>

@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "title": "Sales and enablement",
+      "skills": [
+        {
+          "name": "Salesforce",
+          "icon": "mdi:cloud-outline",
+          "roles": [
+            "sales-ops",
+            "admin"
+          ]
+        },
+        {
+          "name": "Outreach",
+          "icon": "mdi:email-outline",
+          "roles": [
+            "sales-ops",
+            "marketing"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Digital content",
+      "skills": [
+        {
+          "name": "WordPress",
+          "icon": "mdi:wordpress",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Google Analytics",
+          "icon": "mdi:chart-line",
+          "roles": [
+            "marketing"
+          ]
+        },
+        {
+          "name": "Google Ads",
+          "icon": "mdi:bullhorn-outline",
+          "roles": [
+            "marketing"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Design and production",
+      "skills": [
+        {
+          "name": "Adobe InDesign",
+          "icon": "mdi:book-open-page-variant",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Adobe Illustrator",
+          "icon": "mdi:pen",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        },
+        {
+          "name": "Adobe Photoshop",
+          "icon": "mdi:image-outline",
+          "roles": [
+            "creative",
+            "marketing"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "company": "Treering",
+      "role": "Sales development and enablement",
+      "period": "",
+      "type": "",
+      "description": "I ran enablement workshops, coached sales development reps, and built a help site for new hires. I worked with Sales and Marketing on how we introduced the company to educators.",
+      "skills": [
+        "Outreach",
+        "Salesforce",
+        "Training"
+      ]
+    },
+    {
+      "company": "Element 8 / Strategy",
+      "role": "Graphic design and digital marketing",
+      "period": "2011",
+      "type": "",
+      "description": "I designed for print and the web, from apparel and printed pieces to pages built in WordPress. I prepared files for print vendors, presented designs to stakeholders, and used Google Analytics and Google Ads in my digital work.",
+      "skills": [
+        "Print production",
+        "WordPress",
+        "Google Analytics"
+      ]
+    },
+    {
+      "company": "VML",
+      "role": "Copywriting intern",
+      "period": "2010",
+      "type": "Internship",
+      "description": "I wrote a six-email nurture campaign for SAP and worked with senior creatives on campaign pitches. My projects also included SEO research and landing page copy.",
+      "skills": [
+        "Copywriting",
+        "Email campaigns",
+        "SEO research"
+      ]
+    }
+  ]
+}

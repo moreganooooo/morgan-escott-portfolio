@@ -1,0 +1,18 @@
+---
+import Starburst from '../assets/starburst.svg';
+import home from '../data/home.json';
+const root = Astro.url.pathname === '/home/' || Astro.url.pathname === '/home' ? '' : '/home/';
+---
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/" aria-label={home.name + ', home'}>
+      <Starburst class="star" aria-hidden="true" /><b>{home.name.split(' ')[0]}</b>{' '}{home.name.split(' ').slice(1).join(' ')}
+    </a>
+    <nav aria-label="Main navigation">
+      <a href={root + '#projects'}>Work</a>
+      <a href={root + '#about'}>About</a>
+      <a class="nav-career" href={root + '#career'}>Experience</a>
+      <a class="nav-contact" href={root + '#contact'}>Let’s talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
