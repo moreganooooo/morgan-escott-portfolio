@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DeskHero from "../components/desk-hero.astro";
+import Home from "../components/home.astro";
+import Tech from "../components/tech.astro";
+import Projects from "../components/projects.astro";
+import Contact from "../components/contact.astro";
+import Career from "../components/career.astro";
+import localData from '../data/home.json';
+
+const { webpageTitle } = localData;
+---
+
+<Layout title={webpageTitle}>
+  <DeskHero />
+  <Home />
+  <Projects />
+  <Career />
+  <Tech />
+  <Contact />
+</Layout>

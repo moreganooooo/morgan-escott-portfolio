@@ -1,0 +1,39 @@
+---
+import WorkArrow from '../assets/work-arrow.svg';
+import ContactSparkles from '../assets/contact-sparkles.svg';
+---
+<section id="home" class="hero-track" aria-label="Areas of work">
+  <div class="desk-hero">
+    <h1>Lifecycle Campaigns → Email Marketing → Copy → Design → CRM → Sales Strategy</h1>
+    <div class="desk-foreground" aria-hidden="true"></div>
+    <div class="hero-actions"><a class="button" href="#projects">My work <WorkArrow aria-hidden="true" /></a><a class="button plum-button" href="#contact">Contact me <ContactSparkles aria-hidden="true" /></a></div>
+  </div>
+</section>
+<script>
+  const track = document.querySelector<HTMLElement>('.hero-track')!;
+  const hero = track.querySelector<HTMLElement>('.desk-hero')!;
+  const line = track.querySelector('h1')!;
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = 0;
+  function updateHeadline() {
+    frame = 0;
+    if (preference.matches) return;
+    const top = parseFloat(getComputedStyle(hero).top) || 0;
+    const progress = Math.max(0, Math.min(1, (top - track.getBoundingClientRect().top) / Math.max(1, track.offsetHeight - hero.offsetHeight)));
+    const travel = Math.max(0, line.scrollWidth - hero.clientWidth);
+    line.style.transform = `translateX(${-progress * travel}px)`;
+  }
+  function scheduleHeadline() {
+    if (!frame) frame = requestAnimationFrame(updateHeadline);
+  }
+  function syncMotion() {
+    track.classList.toggle('scroll-ready', !preference.matches);
+    if (preference.matches) line.style.removeProperty('transform');
+    scheduleHeadline();
+  }
+  document.fonts.ready.then(scheduleHeadline);
+  window.addEventListener('scroll', scheduleHeadline, { passive: true });
+  window.addEventListener('resize', scheduleHeadline);
+  preference.addEventListener('change', syncMotion);
+  syncMotion();
+</script>

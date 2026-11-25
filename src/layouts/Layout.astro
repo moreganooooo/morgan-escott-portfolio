@@ -3,21 +3,20 @@ import '@fontsource-variable/space-grotesk/index.css';
 import '@fontsource-variable/inter/index.css';
 import '../styles/global.css';
 import Nav from '../components/nav.astro';
-interface Props { title: string }
-const { title } = Astro.props;
+interface Props { title: string; landing?: boolean }
+const { title, landing = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#51194f" />
+    <meta name="theme-color" content="#5e1b5a" />
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip" href="#content">Skip to content</a>
-    <Nav />
+    {!landing && <><a class="skip" href="#content">Skip to content</a><Nav /></>}
     <main id="content"><slot /></main>
   </body>
 </html>

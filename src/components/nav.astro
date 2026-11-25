@@ -1,11 +1,12 @@
 ---
+import Starburst from '../assets/starburst.svg';
 import home from '../data/home.json';
-const root = Astro.url.pathname === '/' ? '' : '/';
+const root = Astro.url.pathname === '/home/' || Astro.url.pathname === '/home' ? '' : '/home/';
 ---
 <header class="masthead">
   <div class="masthead-inner">
-    <a class="wordmark" href={root + '#intro'} aria-label={home.name + ', home'}>
-      <span class="star" aria-hidden="true">✴︎</span><b>{home.name.split(' ')[0]}</b>{' '}{home.name.split(' ').slice(1).join(' ')}
+    <a class="wordmark" href="/" aria-label={home.name + ', home'}>
+      <Starburst class="star" aria-hidden="true" /><b>{home.name.split(' ')[0]}</b>{' '}{home.name.split(' ').slice(1).join(' ')}
     </a>
     <nav aria-label="Main navigation">
       <a href={root + '#projects'}>Work</a>

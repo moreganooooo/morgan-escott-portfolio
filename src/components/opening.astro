@@ -1,41 +1,20 @@
 <section id="intro" class="intro" aria-label="Introduction">
   <video muted playsinline preload="none" data-src="/neon/ink.mp4" aria-hidden="true"></video>
   <div class="ink-texture" aria-hidden="true"></div>
-  <h1>Let’s<br />build<br />something<br /><a href="#home">beautiful.</a></h1>
+  <h1>Let’s<br /><span class="build-word">build</span><br />something<br /><a class="beautiful-word" href="/home/">beautiful.</a></h1>
   <div class="intro-controls">
+    <a class="skip-intro" href="/home/">Skip intro</a>
     <button type="button" hidden class="motion-control">Pause intro</button>
-    <a class="enter" href="#home">Enter portfolio <span aria-hidden="true">↓</span></a>
-  </div>
-</section>
-<section id="home" class="hero-track" aria-label="Areas of work">
-  <div class="desk-hero">
-    <h2>Lifecycle Campaigns → Email Marketing → Copy → Design → CRM → Sales Strategy</h2>
-    <div class="hero-actions"><a class="button" href="#projects">My work →</a><a class="button plum-button" href="#contact">Contact me ✧</a></div>
+    <a class="enter" href="/home/" aria-label="Let’s go to the portfolio"><span aria-hidden="true">→</span></a>
   </div>
 </section>
 <script>
   const intro = document.querySelector<HTMLElement>('.intro')!;
   const video = intro.querySelector('video')!;
   const control = intro.querySelector('button')!;
-  const track = document.querySelector<HTMLElement>('.hero-track')!;
-  const hero = track.querySelector<HTMLElement>('.desk-hero')!;
-  const line = track.querySelector('h2')!;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   let inView = false;
   let pausedByVisitor = false;
-  let frame = 0;
-
-  function updateHeadline() {
-    frame = 0;
-    if (preference.matches) return;
-    const top = parseFloat(getComputedStyle(hero).top) || 0;
-    const progress = Math.max(0, Math.min(1, (top - track.getBoundingClientRect().top) / Math.max(1, track.offsetHeight - hero.offsetHeight)));
-    const travel = Math.max(0, line.scrollWidth - hero.clientWidth);
-    line.style.transform = `translateX(${-progress * travel}px)`;
-  }
-  function scheduleHeadline() {
-    if (!frame) frame = requestAnimationFrame(updateHeadline);
-  }
   function syncMovie() {
     if (!inView || pausedByVisitor || preference.matches || document.hidden) {
       video.pause();
@@ -43,12 +22,25 @@
     }
     if (video.ended) return;
     if (!video.hasAttribute('src')) video.src = video.dataset.src!;
-    video.play().catch(() => {
-      if (video.paused) intro.classList.remove('film-running');
+    video.play().catch(error => {
+      if (error.name === 'AbortError') return;
+      intro.classList.add('film-unavailable');
+      updateCue();
     });
   }
+  const enter = intro.querySelector<HTMLAnchorElement>('.enter')!;
+  function updateCue() {
+    const ready = preference.matches || video.currentTime >= 23
+      || video.error !== null || intro.classList.contains('film-unavailable');
+    intro.classList.toggle('cue-ready', ready);
+    enter.hidden = !ready;
+  }
+  video.addEventListener('timeupdate', updateCue);
+  video.addEventListener('error', updateCue);
   video.addEventListener('playing', () => {
+    intro.classList.remove('film-unavailable');
     intro.classList.add('film-started', 'film-running');
+    updateCue();
     control.hidden = false;
     control.textContent = 'Pause intro';
   });
@@ -64,20 +56,14 @@
     pausedByVisitor = !video.paused;
     syncMovie();
   });
-  function syncMotion() {
-    track.classList.toggle('scroll-ready', !preference.matches);
-    if (preference.matches) line.style.removeProperty('transform');
-    scheduleHeadline();
-    syncMovie();
-  }
   new IntersectionObserver(([entry]) => {
     inView = entry.isIntersecting;
     syncMovie();
   }).observe(intro);
   document.addEventListener('visibilitychange', syncMovie);
-  document.fonts.ready.then(scheduleHeadline);
-  window.addEventListener('scroll', scheduleHeadline, { passive: true });
-  window.addEventListener('resize', scheduleHeadline);
-  preference.addEventListener('change', syncMotion);
-  syncMotion();
+  preference.addEventListener('change', () => {
+    updateCue();
+    syncMovie();
+  });
+  updateCue();
 </script>

@@ -1,15 +1,17 @@
 ---
+import Starburst from '../assets/starburst.svg';
 import home from '../data/home.json';
 ---
 <footer id="contact" class="contact band">
   <div class="wrap">
     <figure class="quote">
+      <Starburst class="quote-star" aria-hidden="true" />
       <blockquote>“Working with Morgan is a joy and the work she produces in her areas of expertise (writing, designing, organizing, and coaching through a marketing messaging or designing discovery process) meets and usually exceeds client expectations.”</blockquote>
       <figcaption>Ed Roche · Founding Partner, Strategy, LLC</figcaption>
     </figure>
     <div class="contact-row"><h2>Let’s talk<span>.</span></h2>
       <div class="inline-links">{home.socials.map(s => <a href={s.url}>{s.name} ↗</a>)}</div>
     </div>
-    <div class="credits"><span>{home.name} · Williamsville, NY</span><a href="#intro">Back to top ↑</a></div>
+    <div class="credits"><span>{home.name} · Williamsville, NY</span><a href="#home">Back to top ↑</a></div>
   </div>
 </footer>

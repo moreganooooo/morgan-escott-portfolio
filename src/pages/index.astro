@@ -1,21 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Opening from "../components/opening.astro";
-import Home from "../components/home.astro";
-import Tech from "../components/tech.astro";
-import Projects from "../components/projects.astro";
-import Contact from "../components/contact.astro";
-import Career from "../components/career.astro";
-import localData from '../data/home.json';
-
-const { webpageTitle } = localData;
+import Layout from '../layouts/Layout.astro';
+import Opening from '../components/opening.astro';
+import profile from '../data/home.json';
 ---
-
-<Layout title={webpageTitle}>
+<Layout title={profile.webpageTitle} landing>
+  <script is:inline>
+    // Preserve bookmarked sections from the original single-page portfolio.
+    if (['#home', '#about', '#projects', '#career', '#tech', '#contact'].includes(location.hash)) {
+      location.replace('/home/' + location.search + location.hash);
+    }
+  </script>
   <Opening />
-  <Home />
-  <Projects />
-  <Career />
-  <Tech />
-  <Contact />
 </Layout>
