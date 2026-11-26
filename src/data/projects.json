@@ -3,112 +3,232 @@
     {
       "title": "Making school outreach easier to teach",
       "description": "At Treering, I organized 129 Outreach sequences, created a 14-category campaign QA checklist, and built reusable training resources for more than 20 teammates. A content library is only useful when people can find it, trust it, and know how to use it.",
-      "images": ["/neon/systems.webp"],
-      "tech": ["Sales enablement", "Outreach", "Salesforce", "Campaign QA", "Documentation"],
+      "images": [
+        "/neon/systems.webp"
+      ],
+      "tech": [
+        "Sales enablement",
+        "Outreach",
+        "Salesforce",
+        "Campaign QA",
+        "Documentation"
+      ],
       "platforms": [],
       "link": "/project/",
       "category": "Systems & Strategy",
-      "roles": ["sales-ops", "marketing", "admin"]
+      "roles": [
+        "sales-ops",
+        "marketing",
+        "admin"
+      ]
     },
     {
       "title": "One product, three school audiences",
       "description": "A messaging exercise for Curipod: three ways to introduce the same classroom tool, tailored to the priorities of a teacher, a technology director, and a curriculum director.",
-      "images": ["/neon/voice.webp"],
-      "tech": ["Positioning", "Audience messaging", "Copywriting"],
+      "images": [
+        "/neon/voice.webp"
+      ],
+      "tech": [
+        "Positioning",
+        "Audience messaging",
+        "Copywriting"
+      ],
       "platforms": [],
       "link": "https://moreganooooo.github.io/CuripodApplication/curipod_answers.html",
       "category": "Copy & Voice",
-      "roles": ["marketing", "sales-ops", "creative"]
+      "roles": [
+        "marketing",
+        "sales-ops",
+        "creative"
+      ]
+    },
+    {
+      "title": "Making local credibility do the talking",
+      "description": "A Treering campaign for McKinney ISD that used nearby school relationships and audience-specific messaging to make a new vendor feel familiar, relevant, and trusted.",
+      "images": [],
+      "tech": [
+        "Geo-targeting",
+        "Local social proof",
+        "Stakeholder messaging"
+      ],
+      "platforms": [],
+      "link": "/project/district-targeting/",
+      "category": "District Strategy",
+      "roles": [
+        "marketing",
+        "sales-ops"
+      ]
+    },
+    {
+      "title": "One brand, three mobile experiences",
+      "description": "A VML strategy concept for Waste Management: WM Mobile, Planet Recycle, and Free Trade, each designed around a distinct customer mindset and business goal.",
+      "images": [],
+      "tech": [
+        "Mobile strategy",
+        "Consumer insight",
+        "Cross-channel copy"
+      ],
+      "platforms": [],
+      "link": "/project/mobile-strategy/",
+      "category": "Mobile Strategy",
+      "roles": [
+        "marketing",
+        "creative"
+      ]
     },
     {
       "title": "A better time to follow up",
       "description": "A Treering nurture approach built around the prospect's own timeline. The sequence acknowledged when a school was ready to revisit a decision, then used light-touch reminders and useful next steps to keep the relationship warm.",
       "images": [],
-      "tech": ["Lifecycle messaging", "Timing strategy", "Relationship-based nurture"],
+      "tech": [
+        "Lifecycle messaging",
+        "Timing strategy",
+        "Relationship-based nurture"
+      ],
       "platforms": [],
       "link": "/project/time-specific-follow-up/",
       "category": "Lifecycle & Email",
-      "roles": ["marketing", "sales-ops"]
+      "roles": [
+        "marketing",
+        "sales-ops"
+      ]
     },
     {
       "title": "When the contract isn't up yet",
       "description": "A long-term objection-handling sequence for schools already committed to another yearbook provider. The messaging paired patient follow-up with useful resources and a clear explanation of Treering's contract-free model.",
       "images": [],
-      "tech": ["Objection handling", "Email strategy", "Value proposition"],
+      "tech": [
+        "Objection handling",
+        "Email strategy",
+        "Value proposition"
+      ],
       "platforms": [],
       "link": "/project/contract-objection/",
       "category": "Lifecycle & Email",
-      "roles": ["marketing", "sales-ops"]
+      "roles": [
+        "marketing",
+        "sales-ops"
+      ]
     },
     {
       "title": "The story behind the numbers",
       "description": "For CommunityAmerica Credit Union, I wrote family financial makeover profiles that brought financial coaching to life through real member experiences rather than institutional messaging.",
       "images": [],
-      "tech": ["Brand journalism", "Human-interest storytelling", "Financial services"],
+      "tech": [
+        "Brand journalism",
+        "Human-interest storytelling",
+        "Financial services"
+      ],
       "platforms": [],
       "link": "/project/family-financial-makeover/",
       "category": "Brand Storytelling",
-      "roles": ["marketing", "creative"]
+      "roles": [
+        "marketing",
+        "creative"
+      ]
     },
     {
       "title": "A field guide for better pet-nutrition conversations",
       "description": "For Hill's Science Diet through Callahan Creek, I helped translate technical pet-nutrition information into practical training and conversation guidance for retail partners.",
       "images": [],
-      "tech": ["Educational writing", "Training content", "Brand voice"],
+      "tech": [
+        "Educational writing",
+        "Training content",
+        "Brand voice"
+      ],
       "platforms": [],
       "link": "/project/hills-retail-handbook/",
       "category": "Content & Enablement",
-      "roles": ["marketing", "creative"]
+      "roles": [
+        "marketing",
+        "creative"
+      ]
     },
     {
       "title": "Turning a sample into a conversation",
       "description": "A Treering follow-up sequence designed to bridge the gap between delivery of a physical yearbook sample and a prospect's next step, with useful resources and flexible ways to engage.",
       "images": [],
-      "tech": ["Email strategy", "Multi-touch follow-up", "A/B testing"],
+      "tech": [
+        "Email strategy",
+        "Multi-touch follow-up",
+        "A/B testing"
+      ],
       "platforms": [],
       "link": "/project/sample-follow-up/",
       "category": "Lifecycle & Email",
-      "roles": ["marketing", "sales-ops"]
+      "roles": [
+        "marketing",
+        "sales-ops"
+      ]
     },
     {
       "title": "A digital path to the booking button",
       "description": "A VML strategy project for Carlson Hotels. Consumer insight and competitive research shaped a cross-channel concept that made the value of booking online feel clear and easy.",
       "images": [],
-      "tech": ["Digital strategy", "Consumer insight", "Cross-channel copy"],
+      "tech": [
+        "Digital strategy",
+        "Consumer insight",
+        "Cross-channel copy"
+      ],
       "platforms": [],
       "link": "/project/carlson-hotels/",
       "category": "Integrated Digital Strategy",
-      "roles": ["marketing", "creative"]
+      "roles": [
+        "marketing",
+        "creative"
+      ]
     },
     {
       "title": "Stories that bring a mission closer",
       "description": "Volunteer profiles and community stories for the Humane Society of Greater Kansas City, connecting individual experiences with the wider work of the organization.",
       "images": [],
-      "tech": ["Nonprofit storytelling", "Editorial writing", "Community engagement"],
+      "tech": [
+        "Nonprofit storytelling",
+        "Editorial writing",
+        "Community engagement"
+      ],
       "platforms": [],
       "link": "/project/humane-society/",
       "category": "Nonprofit & Editorial",
-      "roles": ["marketing", "creative"]
+      "roles": [
+        "marketing",
+        "creative"
+      ]
     },
     {
       "title": "A reusable job-search toolkit",
       "description": "An open-source, local-first resume and job-search toolkit built around verified accomplishments and a free-access design principle. The project turns repetitive application work into a more structured workflow.",
       "images": [],
-      "tech": ["Python", "Workflow design", "Open source", "Documentation"],
+      "tech": [
+        "Python",
+        "Workflow design",
+        "Open source",
+        "Documentation"
+      ],
       "platforms": [],
       "link": "https://github.com/moreganooooo/resume-builder",
       "category": "Open-source workflow tool",
-      "roles": ["sales-ops", "admin"]
+      "roles": [
+        "sales-ops",
+        "admin"
+      ]
     },
     {
       "title": "Cannoli",
       "description": "A visual builder and layout sandbox for terminal interfaces in the Charm ecosystem. Explore components, experiment with layouts, and make terminal UI design more approachable.",
       "images": [],
-      "tech": ["Interaction design", "Go", "WebAssembly", "Developer experience"],
+      "tech": [
+        "Interaction design",
+        "Go",
+        "WebAssembly",
+        "Developer experience"
+      ],
       "platforms": [],
       "link": "https://github.com/moreganooooo/cannoli",
       "category": "Open-source design tool",
-      "roles": ["creative"]
+      "roles": [
+        "creative"
+      ]
     }
   ]
 }
