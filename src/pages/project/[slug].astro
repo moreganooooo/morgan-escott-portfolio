@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CaseStudy from "../../components/case-study.astro";
+import { caseStudies } from "../../data/case-studies";
+
+export function getStaticPaths() {
+  return Object.entries(caseStudies)
+    .filter(([slug]) => slug !== "school-outreach")
+    .map(([slug, project]) => ({ params: { slug }, props: { project } }));
+}
+
+const { project } = Astro.props;
+---
+<Layout title={`${project.title} | Morgan Escott`}>
+  <CaseStudy project={project} />
+</Layout>
