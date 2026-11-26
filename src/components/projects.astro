@@ -1,11 +1,18 @@
 ---
 import ProjectCard from './project-card.astro';
 import data from '../data/projects.json';
+const slugFor = (link: string) => {
+  const match = link.match(/^\/project\/([^/]+)\//);
+  return match ? `/project/?work=${match[1]}` : link;
+};
 ---
 <section class="work band" id="projects">
   <div class="wrap">
     <div class="work-heading">
-      <h2>Selected work<span>.</span></h2>
+      <div>
+        <p class="kicker">Selected projects &amp; writing</p>
+        <h2>Work with a little<br /><em>something behind it.</em></h2>
+      </div>
       <label class="role-picker" hidden>Highlight by role
         <select id="role-focus">
           <option value="general">All roles</option>
@@ -16,7 +23,8 @@ import data from '../data/projects.json';
         </select>
       </label>
     </div>
-    <div class="work-list">{data.items.map(project => <ProjectCard project={project} />)}</div>
+    <p class="work-intro">A selection of campaigns, content systems, and creative projects. Each started with a question about the audience and what they needed next.</p>
+    <div class="work-list">{data.items.map(project => <ProjectCard project={{...project, link: slugFor(project.link)}} />)}</div>
   </div>
 </section>
 
