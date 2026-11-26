@@ -6,12 +6,15 @@ import home from '../data/home.json';
   <div class="wrap">
     <figure class="quote">
       <Starburst class="quote-star" aria-hidden="true" />
-      <blockquote>“Working with Morgan is a joy and the work she produces in her areas of expertise (writing, designing, organizing, and coaching through a marketing messaging or designing discovery process) meets and usually exceeds client expectations.”</blockquote>
-      <figcaption>Ed Roche · Founding Partner, Strategy, LLC</figcaption>
+      <blockquote>“She was on point with our brand focus of always trying to help new prospects first and had tremendous results in driving engagement with target customers.”</blockquote>
+      <figcaption>Ray Mina · Former Head of Sales, Treering Yearbooks</figcaption>
     </figure>
-    <div class="contact-row"><h2>Let’s talk<span>.</span></h2>
-      <div class="inline-links">{home.socials.map(s => <a href={s.url}>{s.name} ↗</a>)}</div>
+    <div class="contact-row"><div>
+      <p class="kicker">Have a good project in mind?</p>
+      <h2>Let’s talk<span>.</span></h2>
     </div>
-    <div class="credits"><span>{home.name} · Williamsville, NY</span><a href="#home">Back to top ↑</a></div>
+      <div class="inline-links">{home.socials.map(s => <a href={s.url} target={s.url.startsWith('http') ? '_blank' : undefined} rel={s.url.startsWith('http') ? 'noopener' : undefined}>{s.name} ↗</a>)}</div>
+    </div>
+    <div class="credits"><span>{home.name} · Buffalo, NY area</span><a href="#home">Back to top ↑</a></div>
   </div>
 </footer>
