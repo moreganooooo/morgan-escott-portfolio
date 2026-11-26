@@ -1,20 +1,23 @@
 {
   "name": "Morgan Escott",
   "photoUrl": "morgan-profile.png",
-  "intro": "I like to write pretty things. I’m also the CRM whisperer who makes sure the right person gets the email. I’ve written copy at VML, designed print and web materials at Element 8, and helped a sales team at Treering find the right words for educators.",
-  "introHtml": "<strong class=\"text-white\">I like to write pretty things.</strong> I’m also the CRM whisperer who makes sure the right person gets the email. I’ve written copy at VML, designed print and web materials at Element 8, and helped a sales team at Treering find the right words for educators.",
-  "webpageTitle": "Morgan Escott | Marketing & Sales Enablement",
+  "intro": "I write copy that makes people feel understood, and build the systems that help it reach the right person. My work lives at the intersection of storytelling, lifecycle marketing, sales enablement, and CRM operations. Across SaaS, EdTech, nonprofit, and agency teams, I've turned complex ideas into useful messages and one-off processes into resources people can keep using.",
+  "introHtml": "<strong class=\"text-white\">I write copy that connects.</strong> I also build the systems that help it reach the right person. My work lives at the intersection of storytelling, lifecycle marketing, sales enablement, and CRM operations. Across SaaS, EdTech, nonprofit, and agency teams, I turn complex ideas into useful messages and one-off processes into resources people can keep using.",
+  "webpageTitle": "Morgan Escott | Creative Marketing, Lifecycle & Sales Enablement",
   "resumeUrl": "",
   "socials": [
-    {
-      "name": "LinkedIn",
-      "url": "https://linkedin.com/in/morganescott",
-      "icon": "mdi:linkedin"
-    },
-    {
-      "name": "Email",
-      "url": "mailto:escott.morgan@gmail.com",
-      "icon": "mdi:email"
-    }
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/morganescott", "icon": "mdi:linkedin" },
+    { "name": "Email", "url": "mailto:escott.morgan@gmail.com", "icon": "mdi:email" },
+    { "name": "GitHub", "url": "https://github.com/moreganooooo", "icon": "mdi:github" }
+  ],
+  "expertise": [
+    "Lifecycle email and multi-touch nurture",
+    "Audience segmentation and personalization",
+    "Sales enablement and messaging playbooks",
+    "Brand voice and content systems",
+    "Campaign QA and performance analysis",
+    "CRM operations and process documentation",
+    "Digital content, SEO and landing-page copy",
+    "Human-interest and nonprofit storytelling"
   ]
 }
