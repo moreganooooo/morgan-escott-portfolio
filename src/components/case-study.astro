@@ -1,0 +1,29 @@
+---
+interface CaseStudy {
+  title: string;
+  kicker: string;
+  intro: string;
+  sections: readonly (readonly [string, string])[];
+  highlights: readonly string[];
+  link: string | null;
+}
+interface Props { project: CaseStudy; }
+const { project } = Astro.props;
+---
+<article class="case-study"><div class="case-inner">
+  <a class="back-link" href="/home/#projects">← All projects</a>
+  <header class="case-heading">
+    <p class="kicker">{project.kicker}</p>
+    <h1>{project.title}</h1>
+    <p>{project.intro}</p>
+  </header>
+  <ul class="case-highlights">{project.highlights.map(item => <li>{item}</li>)}</ul>
+  <div class="case-copy">
+    {project.sections.map(([heading, body]) => <section><h2>{heading}</h2><p>{body}</p></section>)}
+    {project.link && <a class="back-link" href={project.link} target="_blank" rel="noopener noreferrer">Explore related work ↗</a>}
+  </div>
+  <div class="case-footer">
+    <a class="back-link" href="/home/#projects">← Back to selected work</a>
+    <a class="back-link" href="mailto:escott.morgan@gmail.com">Talk about a project ↗</a>
+  </div>
+</div></article>
