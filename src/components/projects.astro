@@ -1,10 +1,7 @@
 ---
 import ProjectCard from './project-card.astro';
 import data from '../data/projects.json';
-const slugFor = (link: string) => {
-  const match = link.match(/^\/project\/([^/]+)\//);
-  return match ? `/project/?work=${match[1]}` : link;
-};
+const slugFor = (link: string) => link;
 ---
 <section class="work band" id="projects">
   <div class="wrap">
