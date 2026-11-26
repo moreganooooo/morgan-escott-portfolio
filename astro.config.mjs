@@ -6,15 +6,9 @@ import tinaDirective from './astro-tina-directive/register';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
-const site =
-  process.env.SITE_URL ||
-  (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'https://morganescott.com');
-
 // https://astro.build/config
 export default defineConfig({
-  site,
+  site: 'https://www.morganescott.com',
   integrations: [
     sitemap({
         filter: (page) => !page.includes('/admin'),

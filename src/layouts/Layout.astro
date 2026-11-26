@@ -6,6 +6,7 @@ import '../styles/global.css';
 import Nav from '../components/nav.astro';
 interface Props { title: string; landing?: boolean }
 const { title, landing = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site);
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +16,7 @@ const { title, landing = false } = Astro.props;
     <meta name="theme-color" content="#5e1b5a" />
     <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalURL.href} />
     <title>{title}</title>
   </head>
   <body>
