@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://morganescott.com/sitemap-index.xml
+Sitemap: https://www.morganescott.com/sitemap-index.xml
