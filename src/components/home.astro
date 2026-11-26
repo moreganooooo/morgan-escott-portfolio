@@ -44,7 +44,7 @@ const fromSiteRoot = (url: string) => /^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url) ?
       <div class="inline-links">
         <a href="#career">My experience ↓</a>
         <a href="#education">Education &amp; development ↓</a>
-        {resumeUrl && <a href={fromSiteRoot(resumeUrl)} target="_blank" rel="noopener">View résumé ↗</a>}
+        <a href={resumeUrl ? fromSiteRoot(resumeUrl) : '/resume/'}>View résumé ↗</a>
         {socials.filter(s => s.name === 'LinkedIn').map(s => <a href={s.url} target="_blank" rel="noopener">{s.name} ↗</a>)}
       </div>
     </div>
