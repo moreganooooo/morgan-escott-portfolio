@@ -206,3 +206,36 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 @keyframes grow-in { from { transform: scale(.65); } to { transform: none; } }
 @keyframes results-in { from { opacity: .5; } to { opacity: 1; } }
 @keyframes quote-in { from { transform: translateY(min(12vh, 120px)); } to { transform: none; } }
+
+
+/* Expanded archive content */
+.bio-follow { margin-top: 1rem; max-width: 42rem; color: #f8e4ef; }
+.expertise { margin-top: clamp(3rem,6vw,6rem); padding-top: 2rem; border-top: 1px solid #ffb9df60; }
+.expertise h3 { max-width: 52rem; margin-top: .7rem; font: 550 clamp(1.8rem,3.8vw,3.4rem)/1.08 var(--display); letter-spacing: -.055em; }
+.expertise ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem 2rem; margin-top: 1.5rem; padding: 0; list-style: none; }
+.expertise li { border-bottom: 1px solid #ffffff35; padding: .65rem 0; color: #ffd4e6; }
+.about h2 em, .education h2 em, .work h2 em { color: var(--rose); }
+.experience h2 { margin-top: .55rem; }
+.experience h2 span { color: var(--rose); }
+.career-period { font-weight: 650; margin-top: .45rem; }
+.career-type { font-size: .83rem; color: #6d405d; margin-top: .2rem; }
+.education { background: #f7e6d7; }
+.education-grid { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(2rem,6vw,6rem); }
+.education h2 { margin-top: .7rem; font-size: clamp(2.7rem,5vw,5rem); }
+.education-list article { border-top: 1px solid var(--rule); padding: 1.2rem 0; }
+.education-list h3, .development-list h3 { font: 600 1.45rem/1.15 var(--display); }
+.education-school { font-weight: 650; margin-top: .3rem; }
+.development-list { border-top: 1px solid var(--rule); padding-top: 1.2rem; margin-top: 1rem; }
+.development-list ul { margin-top: .7rem; padding-left: 1.2rem; }
+.development-list li { margin: .45rem 0; }
+.work-heading { align-items: end; }
+.work-heading h2 { margin-top: .6rem; font-size: clamp(2.8rem,5.5vw,5.5rem); }
+.work-intro { max-width: 50rem; margin-top: 1.2rem; font-size: 1.07rem; }
+.case-highlights { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; padding: 0; margin: 1.5rem 0 2rem; list-style: none; }
+.case-highlights li { border: 1px solid var(--rule); border-radius: .85rem; background: #fae1e6; padding: 1rem; font: 600 1rem/1.25 var(--display); }
+.case-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.25rem; }
+.quote blockquote { max-width: 54rem; }
+@media (max-width: 680px) {
+  .expertise ul, .education-grid, .case-highlights { grid-template-columns: 1fr; }
+  .case-highlights { gap: .5rem; }
+}
