@@ -3,12 +3,42 @@ import career from '../data/career.json';
 ---
 <section class="band experience" id="career">
   <div class="wrap">
-    <h2>Experience</h2>
+    <p class="kicker">The work behind the work</p>
+    <h2>Experience<span>.</span></h2>
     <div class="career-list">
       {career.items.map(item => <article>
-        <div><h3>{item.company}</h3>{item.period && <p>{item.period}</p>}</div>
-        <div><h4>{item.role}</h4><p>{item.description}</p><ul class="tags">{item.skills.map(skill => <li>{skill}</li>)}</ul></div>
+        <div>
+          <h3>{item.company}</h3>
+          {item.period && <p class="career-period">{item.period}</p>}
+          {item.type && <p class="career-type">{item.type}</p>}
+        </div>
+        <div>
+          <h4>{item.role}</h4>
+          <p>{item.description}</p>
+          <ul class="tags">{item.skills.map(skill => <li>{skill}</li>)}</ul>
+        </div>
       </article>)}
+    </div>
+  </div>
+</section>
+<section class="band education" id="education">
+  <div class="wrap education-grid">
+    <div>
+      <p class="kicker">The foundations</p>
+      <h2>Education &amp;<br /><em>development.</em></h2>
+    </div>
+    <div>
+      <div class="education-list">
+        {career.education?.map(item => <article>
+          <h3>{item.credential}</h3>
+          <p class="education-school">{item.institution}</p>
+          {item.details && <p>{item.details}</p>}
+        </article>)}
+      </div>
+      <div class="development-list">
+        <h3>Certifications &amp; selected development</h3>
+        <ul>{career.development?.map(item => <li>{item}</li>)}</ul>
+      </div>
     </div>
   </div>
 </section>
