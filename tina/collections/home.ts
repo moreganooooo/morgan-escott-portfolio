@@ -14,7 +14,6 @@ export const HomeCollection: Collection = {
     { name: "introHtml", label: "Intro (with HTML highlights)", type: "string", ui: { component: "textarea" } },
     { name: "webpageTitle", label: "Webpage / Browser Tab Title", type: "string" },
     { name: "resumeUrl", label: "Resume PDF URL", type: "string" },
-    { name: "expertise", label: "Expertise", type: "string", list: true },
     {
       name: "socials", label: "Social Links", type: "object", list: true,
       ui: { itemProps: (item) => ({ label: item?.name ?? "Social Link" }) },
