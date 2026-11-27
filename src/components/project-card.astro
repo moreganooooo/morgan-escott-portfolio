@@ -29,7 +29,7 @@ const external = project.link.startsWith('http');
     <p class="kicker">{project.category}</p>
     <h3>{project.title}</h3><p>{project.description}</p>
     <ul class="tags">{project.tech.map(tag => <li>{tag}</li>)}</ul>
-    <span class="card-arrow" aria-hidden="true">↗</span>
+    <span class="card-link-label">{external ? 'Open project ↗' : 'Read case study →'}</span>
   </div>
 </a>
 
