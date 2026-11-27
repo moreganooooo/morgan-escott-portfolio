@@ -3,78 +3,59 @@
     {
       "title": "Sales and enablement",
       "skills": [
-        {
-          "name": "Salesforce",
-          "icon": "mdi:cloud-outline",
-          "roles": [
-            "sales-ops",
-            "admin"
-          ]
-        },
-        {
-          "name": "Outreach",
-          "icon": "mdi:email-outline",
-          "roles": [
-            "sales-ops",
-            "marketing"
-          ]
-        }
+        {"name": "Salesforce", "icon": "mdi:cloud-outline", "roles": ["sales-ops","admin"]},
+        {"name": "Outreach", "icon": "mdi:email-outline", "roles": ["sales-ops","marketing"]},
+        {"name": "PersistIQ", "icon": "mdi:email-fast-outline", "roles": ["sales-ops","marketing"]},
+        {"name": "Mailchimp", "icon": "mdi:email-newsletter", "roles": ["marketing"]},
+        {"name": "Drift", "icon": "mdi:message-text-outline", "roles": ["marketing","sales-ops"]},
+        {"name": "Tout", "icon": "mdi:send-outline", "roles": ["sales-ops","marketing"]},
+        {"name": "Vidyard", "icon": "mdi:video-outline", "roles": ["marketing","sales-ops"]}
       ]
     },
     {
-      "title": "Digital content",
+      "title": "Digital content & analytics",
       "skills": [
-        {
-          "name": "WordPress",
-          "icon": "mdi:wordpress",
-          "roles": [
-            "creative",
-            "marketing"
-          ]
-        },
-        {
-          "name": "Google Analytics",
-          "icon": "mdi:chart-line",
-          "roles": [
-            "marketing"
-          ]
-        },
-        {
-          "name": "Google Ads",
-          "icon": "mdi:bullhorn-outline",
-          "roles": [
-            "marketing"
-          ]
-        }
+        {"name": "WordPress", "icon": "mdi:wordpress", "roles": ["creative","marketing"]},
+        {"name": "Webflow", "icon": "mdi:web", "roles": ["creative","marketing"]},
+        {"name": "Wix", "icon": "mdi:web-box", "roles": ["creative","marketing"]},
+        {"name": "Google Analytics", "icon": "mdi:chart-line", "roles": ["marketing"]},
+        {"name": "Google Ads", "icon": "mdi:bullhorn-outline", "roles": ["marketing"]},
+        {"name": "Airtable", "icon": "mdi:table-large", "roles": ["sales-ops","admin"]},
+        {"name": "SEO", "icon": "mdi:magnify", "roles": ["marketing","creative"]}
       ]
     },
     {
-      "title": "Design and production",
+      "title": "Design & production",
       "skills": [
-        {
-          "name": "Adobe InDesign",
-          "icon": "mdi:book-open-page-variant",
-          "roles": [
-            "creative",
-            "marketing"
-          ]
-        },
-        {
-          "name": "Adobe Illustrator",
-          "icon": "mdi:pen",
-          "roles": [
-            "creative",
-            "marketing"
-          ]
-        },
-        {
-          "name": "Adobe Photoshop",
-          "icon": "mdi:image-outline",
-          "roles": [
-            "creative",
-            "marketing"
-          ]
-        }
+        {"name": "Adobe InDesign", "icon": "mdi:book-open-page-variant", "roles": ["creative","marketing"]},
+        {"name": "Adobe Illustrator", "icon": "mdi:pen", "roles": ["creative","marketing"]},
+        {"name": "Adobe Photoshop", "icon": "mdi:image-outline", "roles": ["creative","marketing"]},
+        {"name": "Canva", "icon": "mdi:palette-outline", "roles": ["creative","marketing"]},
+        {"name": "Figma", "icon": "mdi:vector-square", "roles": ["creative","marketing"]},
+        {"name": "Pitch decks", "icon": "mdi:presentation", "roles": ["creative","marketing"]}
+      ]
+    },
+    {
+      "title": "Productivity & AI",
+      "skills": [
+        {"name": "Slack", "icon": "mdi:slack", "roles": ["all"]},
+        {"name": "Zoom", "icon": "mdi:video-account", "roles": ["all"]},
+        {"name": "Trello", "icon": "mdi:view-dashboard-outline", "roles": ["admin","sales-ops"]},
+        {"name": "Microsoft Office", "icon": "mdi:microsoft-office", "roles": ["admin","sales-ops"]},
+        {"name": "Google Workspace", "icon": "mdi:google-drive", "roles": ["all"]},
+        {"name": "Notion", "icon": "mdi:notebook-outline", "roles": ["all"]},
+        {"name": "ChatGPT", "icon": "mdi:robot-outline", "roles": ["all"]},
+        {"name": "Claude", "icon": "mdi:brain", "roles": ["all"]},
+        {"name": "Gemini", "icon": "mdi:google-gemini", "roles": ["all"]},
+        {"name": "Perplexity", "icon": "mdi:robot", "roles": ["all"]}
+      ]
+    },
+    {
+      "title": "Technical",
+      "skills": [
+        {"name": "Python", "icon": "mdi:language-python", "roles": ["sales-ops","admin"]},
+        {"name": "HTML / CSS", "icon": "mdi:language-html5", "roles": ["creative","marketing"]},
+        {"name": "GitHub", "icon": "mdi:github", "roles": ["creative","sales-ops","admin"]}
       ]
     }
   ]
