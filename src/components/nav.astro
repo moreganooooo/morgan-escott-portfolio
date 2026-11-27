@@ -2,6 +2,7 @@
 import Starburst from '../assets/starburst.svg';
 import home from '../data/home.json';
 const root = Astro.url.pathname === '/home/' || Astro.url.pathname === '/home' ? '' : '/home/';
+const isHome = Astro.url.pathname === '/home/' || Astro.url.pathname === '/home';
 ---
 <header class="masthead">
   <div class="masthead-inner">
@@ -14,6 +15,7 @@ const root = Astro.url.pathname === '/home/' || Astro.url.pathname === '/home' ?
       <a class="nav-career" href={root + '#career'}>Experience</a>
       <a class="nav-resume" href="/resume/">Résumé</a>
       <a class="nav-contact" href={root + '#contact'}>Let’s talk <span aria-hidden="true">↗</span></a>
+      {isHome && <button class="nav-motion-control" type="button" hidden aria-pressed="false">Pause Animation</button>}
     </nav>
   </div>
 </header>
