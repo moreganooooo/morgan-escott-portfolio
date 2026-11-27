@@ -300,6 +300,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .nav-resume { color: var(--paper); border-bottom: 1px solid #ff79b7; }
 @media (max-width: 680px) {
   .resume-heading-row { align-items: start; flex-direction: column; }
+  .testimonial-grid { grid-template-columns: 1fr; }
   .resume-skills, .resume-two-column { grid-template-columns: 1fr; }
   .resume-job-heading { display: block; }
   .resume-job-heading p { text-align: left; margin-top: .2rem; }
