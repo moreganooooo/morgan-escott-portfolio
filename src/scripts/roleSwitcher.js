@@ -6,7 +6,7 @@ if (focus) {
       const roles = item.dataset.roles.split(',').map(role => role.trim());
       const matches = roles.includes(focus.value) || roles.includes('all');
       item.classList.toggle('role-match', focus.value !== 'general' && matches);
-      item.setAttribute('aria-current', focus.value !== 'general' && matches ? 'true' : 'false');
+      item.toggleAttribute('data-role-match', focus.value !== 'general' && matches);
     }
   });
 }
