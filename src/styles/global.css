@@ -39,6 +39,8 @@ nav { gap: clamp(.75rem, 2.5vw, 2.6rem); font-size: .95rem; }
 nav a { color: var(--hero-orange); padding-block: .5rem; }
 nav a:hover, .inline-links a:hover { text-decoration: underline; text-underline-offset: .24em; }
 nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; border-radius: 2rem; padding: .3em .9em; }
+.nav-motion-control { border: 0; padding: .3em .7em; background: transparent; color: var(--paper); font: inherit; font-size: .78rem; cursor: pointer; }
+.nav-motion-control:hover, .nav-motion-control:focus-visible { color: var(--hero-orange); text-decoration: underline; text-underline-offset: .24em; }
 .intro { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 100svh; padding: 3rem 5vw 5rem; background: var(--gold); color: var(--rose); overflow: hidden; }
 .intro video, .ink-texture { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; opacity: 0; }
 .ink-texture { background: url('/neon/overlay.webp') center/cover; mix-blend-mode: overlay; }
@@ -56,7 +58,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .enter span { font: 550 clamp(1.6rem, 3vw, 3.2rem)/1 var(--display); }
 .enter { margin-bottom: .02em; }
 .skip-intro { font: 550 .9rem var(--display); background: var(--paper); color: var(--ink); border-radius: 2rem; padding: .65rem 1rem; }
-.desk-foreground { position: absolute; inset: 0; pointer-events: none; z-index: 1; background: url('/neon/desk-foreground.webp') center/cover no-repeat; }
+.desk-foreground { position: absolute; inset: 0; pointer-events: none; z-index: 3; background: url('/neon/desk-foreground.webp') center/cover no-repeat; }
 .hero-actions { z-index: 2; }
 .hero-actions .button { display: inline-flex; align-items: center; gap: .4rem; }
 .hero-actions svg { width: 1.3em; height: 1.3em; }
@@ -100,7 +102,8 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .card-arrow { position: absolute; right: 1rem; top: 1rem; font-size: 1.35rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.15rem; }
 .tags li { padding: .2rem .65rem; border: 1px solid var(--rule); border-radius: 1rem; font-size: .77rem; }
-.role-match { position: relative; box-shadow: 0 0 0 4px var(--rose), 0 .8rem 1.8rem #5e1b5a26; transform: translateY(-.25rem); filter: saturate(1.08); }
+.work-list[data-role-filtered] .work-card:not([data-role-match]) { filter: saturate(.58); opacity: .68; transform: scale(.985); }
+.role-match { position: relative; border: 3px solid var(--rose); box-shadow: 0 .8rem 1.8rem #5e1b5a26; transform: translateY(-.25rem); filter: saturate(1.08); }
 .role-match .card-copy::before { content: 'Role match'; display: inline-block; margin-bottom: .55rem; padding: .22rem .6rem; border-radius: 999px; background: var(--rose); color: white; font: 650 .7rem/1 var(--display); letter-spacing: .05em; text-transform: uppercase; }
 .card-link-label { display: inline-flex; align-items: center; margin-top: 1.25rem; color: #842153; font: 650 .9rem/1 var(--display); text-decoration: underline; text-underline-offset: .18em; }
 .work-card:hover .card-link-label, .work-card:focus-visible .card-link-label { text-decoration-thickness: 2px; }
@@ -212,6 +215,11 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 @keyframes grow-in { from { transform: scale(.65); } to { transform: none; } }
 @keyframes results-in { from { opacity: .5; } to { opacity: 1; } }
 @keyframes quote-in { from { transform: translateY(min(12vh, 120px)); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .nav-motion-control, .motion-control { display: none !important; }
+}
+
 
 
 /* Expanded archive content */
@@ -266,6 +274,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 .resume-job-heading p { font-size: .82rem; text-align: right; }
 .resume-job h4 { font-size: .95rem; margin-top: .2rem; }
 .resume-job ul, .resume-section ul { padding-left: 1.2rem; margin-top: .45rem; }
+.resume-plain-list { padding-left: 0 !important; list-style: none; }
 .resume-job li, .resume-section li { margin: .25rem 0; font-size: .91rem; line-height: 1.45; }
 .resume-two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .resume-two-column h2 { font-size: clamp(1.6rem,2.6vw,2rem); margin-bottom: .8rem; }
