@@ -9,40 +9,27 @@ export const ProjectsCollection: Collection = {
   ui: { global: true },
   fields: [
     {
-      name: "items",
-      label: "Projects",
-      type: "object",
-      list: true,
-      ui: {
-        itemProps: (item) => ({ label: item?.title ?? "Project" }),
-      },
+      name: "items", label: "Projects", type: "object", list: true,
+      ui: { itemProps: (item) => ({ label: item?.title ?? "Project" }) },
       fields: [
         { name: "title", label: "Title", type: "string" },
-        {
-          name: "description",
-          label: "Description",
-          type: "string",
-          ui: { component: "textarea" },
-        },
+        { name: "description", label: "Description", type: "string", ui: { component: "textarea" } },
         { name: "images", label: "Images (filenames or URLs)", type: "string", list: true },
-        { name: "tech", label: "Tech Stack", type: "string", list: true },
-        { name: "platforms", label: "Platforms (e.g. web, apple-ios, android)", type: "string", list: true },
+        { name: "tech", label: "Skills / Platforms", type: "string", list: true },
+        { name: "platforms", label: "Platforms", type: "string", list: true },
         { name: "link", label: "Project Link", type: "string" },
         { name: "category", label: "Category", type: "string" },
         {
-          name: "roles",
-          label: "Relevant Categories",
-          type: "string",
-          list: true,
+          name: "roles", label: "Relevant Categories", type: "string", list: true,
           options: [
-            { value: "all",       label: "All / General" },
+            { value: "all", label: "All / General" },
             { value: "sales-ops", label: "Sales Operations & CRM" },
             { value: "marketing", label: "Marketing & Copywriting" },
-            { value: "creative",  label: "Branding & Creative" },
-            { value: "admin",     label: "Executive & Admin Support" },
-          ],
-        },
-      ],
-    },
-  ],
+            { value: "creative", label: "Branding & Creative" },
+            { value: "admin", label: "Executive & Admin Support" }
+          ]
+        }
+      ]
+    }
+  ]
 };

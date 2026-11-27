@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "build": "tinacms build && astro build",
+    "build": "if [ \"$VERCEL_ENV\" = \"production\" ]; then tinacms build; else tinacms build --skip-cloud-checks; fi && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -49,5 +49,5 @@
     "katex": "^0.18.2",
     "postcss-selector-parser": "^6.1.5",
     "qs": ">=6.16.1"
-    }
+  }
 }

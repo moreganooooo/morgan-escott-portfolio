@@ -1,40 +1,187 @@
 {
   "items": [
     {
-      "company": "Treering",
-      "role": "Sales development and enablement",
-      "period": "",
-      "type": "",
-      "description": "I ran enablement workshops, coached sales development reps, and built a help site for new hires. I worked with Sales and Marketing on how we introduced the company to educators.",
+      "company": "Mercor",
+      "role": "Sales & Marketing Expert",
+      "period": "Aug 2025",
+      "type": "Short-term contract · Remote",
+      "description": "Designed an adversarial EdTech prospecting challenge to test a frontier AI model. Researched K–12 technology adoption and district characteristics, built and solved the challenge as an answer key, and wrote a detailed reviewer rubric. Tested the prompt and rubric in a custom Airtable interface and documented model performance.",
       "skills": [
-        "Outreach",
-        "Salesforce",
-        "Training"
+        "EdTech research",
+        "Challenge design",
+        "Evaluation rubrics",
+        "Airtable",
+        "AI quality review"
+      ],
+      "roles": [
+        "marketing",
+        "sales-ops"
       ]
     },
     {
-      "company": "Element 8 / Strategy",
-      "role": "Graphic design and digital marketing",
-      "period": "2011",
-      "type": "",
-      "description": "I designed for print and the web, from apparel and printed pieces to pages built in WordPress. I prepared files for print vendors, presented designs to stakeholders, and used Google Analytics and Google Ads in my digital work.",
+      "company": "Treering Yearbooks",
+      "role": "Creative Strategy Lead & Senior Sales Development Manager",
+      "period": "Aug 2016 – Aug 2024",
+      "type": "Remote",
+      "description": "Joined as one of the first two outbound hires and helped build the sales development program. Founded and led the cross-department Content Committee; developed brand voice guidance, campaign libraries and QA processes; owned Outreach adoption and Salesforce workflows; and created onboarding resources and training used across the team. Personally generated more than $1.5M in closed-won revenue from sourced opportunities and became the first SDR to reach $1M+.",
       "skills": [
+        "Salesforce",
+        "Outreach.io",
+        "Campaign strategy",
+        "Brand voice",
+        "Sales enablement",
+        "Team training",
+        "CRM operations",
+        "Reporting"
+      ],
+      "roles": [
+        "sales-ops",
+        "marketing",
+        "admin"
+      ]
+    },
+    {
+      "company": "Inside Sales Team (now Alleyoop)",
+      "role": "Business Development Representative",
+      "period": "Oct 2015 – Aug 2016",
+      "type": "Buffalo, NY",
+      "description": "Earned Top Seller recognition among the hiring class and ranked in the company Top 10 during the first two months. Promoted within six months to lead a 12-person SDR team. Supported client outreach for Treering Yearbooks and Adobe Sign, including research-led and account-based messaging.",
+      "skills": [
+        "Prospect research",
+        "Account-based messaging",
+        "Outbound strategy",
+        "Team leadership"
+      ],
+      "roles": [
+        "sales-ops",
+        "marketing"
+      ]
+    },
+    {
+      "company": "USitek",
+      "role": "Administrative Marketing Assistant",
+      "period": "Jul 2015 – Oct 2015",
+      "type": "Buffalo, NY",
+      "description": "Supported marketing administration and day-to-day business development operations.",
+      "skills": [
+        "Marketing administration",
+        "Business support",
+        "Prospect communication"
+      ],
+      "roles": [
+        "sales-ops"
+      ]
+    },
+    {
+      "company": "Element 8 / Strategy LLC",
+      "role": "Graphic Design & Digital Marketing",
+      "period": "2011; selected freelance work in 2013",
+      "type": "Lenexa, KS",
+      "description": "Built a visual identity for a new venture and developed integrated brand work across print, web, and social. Prepared production-ready files, presented design rationale to stakeholders, supported WordPress updates, and worked with Google Analytics and Google Ads.",
+      "skills": [
+        "Adobe Creative Suite",
+        "Brand identity",
         "Print production",
         "WordPress",
-        "Google Analytics"
+        "Google Analytics",
+        "Google Ads"
+      ],
+      "roles": [
+        "creative",
+        "marketing"
       ]
     },
     {
       "company": "VML",
-      "role": "Copywriting intern",
+      "role": "Copywriting Intern",
       "period": "2010",
-      "type": "Internship",
-      "description": "I wrote a six-email nurture campaign for SAP and worked with senior creatives on campaign pitches. My projects also included SEO research and landing page copy.",
+      "type": "Kansas City, MO",
+      "description": "Worked with senior creatives on cross-platform campaigns and pitches. Selected to write a six-email nurture campaign for SAP and contributed to a 200+ page digital strategy report for Carlson Hotels, alongside SEO research and landing-page copy.",
       "skills": [
         "Copywriting",
         "Email campaigns",
-        "SEO research"
+        "SEO research",
+        "Digital strategy",
+        "Pitch development"
+      ],
+      "roles": [
+        "marketing",
+        "creative"
+      ]
+    },
+    {
+      "company": "Callahan Creek",
+      "role": "Copywriting Intern & Freelance Contributor",
+      "period": "2009 – 2010",
+      "type": "Lawrence, KS",
+      "description": "Created campaign copy for clients across banking, pet nutrition, and telecommunications. Developed concepts for print, digital, radio, and PPC; two concepts were selected for production, and I was invited back for freelance work.",
+      "skills": [
+        "B2B and B2C copywriting",
+        "Campaign concepting",
+        "Print",
+        "Digital",
+        "PPC"
+      ],
+      "roles": [
+        "marketing",
+        "creative"
+      ]
+    },
+    {
+      "company": "Unisource Document Products",
+      "role": "Marketing & Design Intern",
+      "period": "May – Aug 2008",
+      "type": "Kansas City area",
+      "description": "Managed website updates and Google Analytics monitoring, and designed multimedia campaign materials for the UDP Tailgate 2008 product show.",
+      "skills": [
+        "Website updates",
+        "Google Analytics",
+        "Graphic design",
+        "Campaign materials"
+      ],
+      "roles": [
+        "marketing",
+        "creative"
+      ]
+    },
+    {
+      "company": "Humane Society of Greater Kansas City",
+      "role": "Communications Intern",
+      "period": "May – Aug 2007",
+      "type": "Kansas City, MO",
+      "description": "Produced graphic design projects, news releases, and e-newsletters; also conducted a live KCTV 5 interview promoting pet adoption.",
+      "skills": [
+        "Nonprofit communications",
+        "Graphic design",
+        "News releases",
+        "Email newsletters",
+        "Media relations"
+      ],
+      "roles": [
+        "marketing",
+        "creative"
       ]
     }
+  ],
+  "education": [
+    {
+      "credential": "BS, Journalism & Strategic Communication",
+      "institution": "University of Kansas",
+      "details": "Lied Center of Performing Arts marketing internship; expanded social media reach by 800%."
+    },
+    {
+      "credential": "AA, Journalism",
+      "institution": "Kansas City Kansas Community College",
+      "details": "Editor-in-Chief of the student newspaper; graduated with honors."
+    },
+    {
+      "credential": "Graphic Design coursework",
+      "institution": "Johnson County Community College",
+      "details": "Coursework in color theory, illustration, desktop publishing, typography, 3D concepts, and film photography."
+    }
+  ],
+  "development": [
+    "Vidyard Video for Sales Certification · 2021",
+    "Camp Portfolio, Bernstein Rein · 2008"
   ]
 }

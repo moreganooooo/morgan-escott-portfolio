@@ -1,34 +1,22 @@
 ---
 import localData from '../data/home.json';
 
-//Data Definitions
-interface Social {
-  name: string;
-  url: string;
-  icon: string;
-}
-
+interface Social { name: string; url: string; icon: string; }
 interface ProfileData {
-  name: string;
-  photoUrl: string;
-  intro: string;
-  introHtml: string;
-  resumeUrl: string;
-  socials: Social[];
+  name: string; photoUrl: string; intro: string; introHtml: string;
+  resumeUrl: string; socials: Social[]; expertise?: string[];
 }
 
-const isApiLive = import.meta.env.PROD; // Auto true in production
+const isApiLive = import.meta.env.PROD;
 const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
-
-let data: ProfileData; // data as ProfileData
-
+let data: ProfileData;
 if (isApiLive && BASE_URL) {
   try {
     const response = await fetch(`${BASE_URL}/home`);
     if (!response.ok) throw new Error('Network response was not ok');
     data = await response.json();
   } catch (error) {
-    console.error("API Fetch failed, falling back to mock data", error);
+    console.error("API Fetch failed, falling back to local profile data", error);
     data = localData as ProfileData;
   }
 } else {
@@ -36,7 +24,6 @@ if (isApiLive && BASE_URL) {
 }
 
 const { name, photoUrl, introHtml, resumeUrl, socials } = data;
-// The profile also accepts media paths relative to the site's public directory.
 const fromSiteRoot = (url: string) => /^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url) ? url : '/' + url;
 ---
 <div class="about-marquee">
@@ -52,31 +39,41 @@ const fromSiteRoot = (url: string) => /^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(url) ?
       <p class="kicker">About Morgan</p>
       <h2>Copy with heart.<br /><em>Strategy with style.</em></h2>
       <p class="bio" set:html={introHtml || data.intro} />
+      <p class="bio-follow">I start by asking who the work is for, what matters in their world, and where the current experience makes things harder than they need to be. Then I connect the insight to the message, the channel, and the systems behind it.</p>
+      <p class="bio-follow">Outside the work itself, I’m drawn to sustainability, accessibility in design, and the small ways thoughtful communication can make complicated things feel more approachable. I’m equally happy exploring a hiking trail, learning a new board game, or getting lost in a Zelda release. ✨</p>
       <div class="inline-links">
         <a href="#career">My experience ↓</a>
-        {resumeUrl && <a href={fromSiteRoot(resumeUrl)}>View résumé ↗</a>}
-        {socials.filter(s => s.name === 'LinkedIn').map(s => <a href={s.url}>{s.name} ↗</a>)}
+        <a href="#education">Education &amp; development ↓</a>
+        <a href={resumeUrl ? fromSiteRoot(resumeUrl) : '/resume/'}>View résumé ↗</a>
+        {socials.filter(s => s.name === 'LinkedIn').map(s => <a href={s.url} target="_blank" rel="noopener">{s.name} ↗</a>)}
       </div>
     </div>
   </div>
   <dl class="wrap results">
     <div><dt>Closed-won revenue from opportunities I generated</dt><dd>$1.5M+</dd></div>
-    <div><dt>Outreach sequences I reorganized</dt><dd>129</dd></div>
-    <div><dt>Teammates I trained on Salesforce and Outreach</dt><dd>20+</dd></div>
+    <div><dt>Outreach sequences reorganized into a usable library</dt><dd>129</dd></div>
+    <div><dt>Teammates trained on Salesforce and Outreach</dt><dd>20+</dd></div>
   </dl>
+  {data.expertise?.length && <div class="wrap expertise">
+    <p class="kicker">A few things I love doing</p>
+    <h3>Strategy, storytelling, and the systems that bring them together.</h3>
+    <ul>{data.expertise.map(item => <li>{item}</li>)}</ul>
+  </div>}
 </section>
 
 <script>
-  const strip = document.querySelector<HTMLElement>('.about-marquee')!;
-  const toggle = strip.querySelector('button')!;
-  strip.dataset.playing = 'true';
-  toggle.hidden = false;
-  toggle.addEventListener('click', () => {
-    const paused = strip.toggleAttribute('data-paused');
-    toggle.textContent = paused ? '▶' : 'Ⅱ';
-    toggle.setAttribute('aria-label', paused ? 'Play moving text' : 'Pause moving text');
-    toggle.setAttribute('aria-pressed', String(paused));
-  });
+  const strip = document.querySelector<HTMLElement>('.about-marquee');
+  const toggle = strip?.querySelector<HTMLButtonElement>('button');
+  if (strip && toggle) {
+    strip.dataset.playing = 'true';
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const paused = strip.toggleAttribute('data-paused');
+      toggle.textContent = paused ? '▶' : 'Ⅱ';
+      toggle.setAttribute('aria-label', paused ? 'Play moving text' : 'Pause moving text');
+      toggle.setAttribute('aria-pressed', String(paused));
+    });
+  }
   const reveal = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;

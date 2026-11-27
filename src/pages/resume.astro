@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const skills = [
+  { title: "Email & lifecycle marketing", items: ["Campaign strategy", "Multi-touch sequencing", "Audience segmentation", "A/B testing", "Cohort analysis", "Outreach.io", "PersistIQ", "Mailchimp", "Drift", "Tout", "Campaign QA", "Personalization at scale", "Variable logic", "Conversion tracking"] },
+  { title: "Sales enablement & content", items: ["Brand voice development", "Playbook writing", "Sequence libraries", "Live and asynchronous training", "Sales collateral", "Onboarding content", "Cross-functional content programs"] },
+  { title: "CRM & marketing operations", items: ["Salesforce Classic & Lightning", "Data hygiene", "Reports and dashboards", "Pipeline management", "Workflow automation", "HubSpot (basic)", "Process documentation", "Data scrubbing and imports", "CSV imports", "Person Accounts", "Google Sheets reporting"] },
+  { title: "Creative & design", items: ["Adobe Illustrator, Photoshop and InDesign", "Canva", "Figma (basic)", "Copywriting and editing", "Pitch deck design", "Brand identity", "SEO", "WordPress", "Webflow", "Wix", "HTML/CSS (basic)"] },
+  { title: "Analytics & productivity", items: ["Google Analytics", "Google Ads", "Facebook Ads", "Vidyard", "Thnks", "Airtable", "Slack", "Zoom", "Trello", "Microsoft Office", "Google Workspace", "Notion"] },
+  { title: "AI & technical tools", items: ["ChatGPT", "Claude", "Gemini", "Perplexity", "Notion AI", "Python (basic)", "GitHub"] }
+];
+
+const history = [
+  {company:"Mercor",role:"Sales & Marketing Expert",period:"Aug 2025 · Short-term contract · Remote",details:[
+    "Designed an adversarial EdTech prospecting challenge to test a frontier AI model, using research on K–12 technology adoption, district school counts, and regional market factors.",
+    "Built and solved the challenge as an answer key, wrote a detailed reviewer rubric, and tested the prompt and rubric in a custom Airtable interface.",
+    "Completed platform training and qualification assessments before production, then logged model successes and failures and clarified task requirements with project leads over Slack."
+  ]},
+  {company:"Treering Yearbooks",role:"Creative Strategy Lead & Senior Sales Development Manager",period:"Aug 2016 – Aug 2024 · Remote",details:[
+    "Co-founded the outbound sales program as one of its first two hires, building prospecting processes, data workflows, and messaging from the ground up.",
+    "Founded and chaired a cross-department Content Committee; led brand voice, sequence library, campaign QA, and content governance.",
+    "Authored 100+ audience-segmented email campaigns and maintained voice/tone guidance adopted team-wide.",
+    "Reorganized the Outreach content library, adding collections, tags, documentation, and training. Authored a 14-category QA checklist for the 16-sequence rebuild.",
+    "Developed live and asynchronous training for 20+ employees and created an internal process resource adopted into new-hire training.",
+    "Coached a remote team of 4–6 SDRs, while managing 2,000+ accounts and partnering with Marketing, Product, Engineering, Operations, and Support.",
+    "First outbound hire to surpass $1M in sourced revenue, exceeding the first-year target by 17%; personally generated $1.5M+ in closed-won revenue from sourced opportunities.",
+    "Owned 2,900+ school accounts across 51 states and 565 districts; used bulk CSV imports, unique-school-ID deduplication, Google Sheets prioritization, and Salesforce reporting to keep the data usable.",
+    "Audited stale CRM records and built the business case and workflows for a Salesforce research role, surfacing more than $3M in stale, unworked accounts.",
+    "Championed the move from PersistIQ to Outreach.io, built the feature comparison that informed the decision, then configured views and trained teammates on the platform.",
+    "Pioneered district-level outreach and PTA strategy, turning audience insight into team-wide templates and training."
+  ]},
+  {company:"Inside Sales Team (now Alleyoop)",role:"Business Development Representative",period:"Oct 2015 – Aug 2016 · Buffalo, NY",details:[
+    "Named Top Seller of the hiring class and a Top 10 performer during the first two months.",
+    "Promoted within six months to lead a 12-person team; developed account-based messaging for Adobe Sign."
+  ]},
+  {company:"USitek",role:"Administrative Marketing Assistant",period:"Jul 2015 – Oct 2015",details:[]},
+  {company:"Element 8 / Strategy LLC",role:"Lead Graphic Designer / Design Assistant",period:"Jan 2011 – Oct 2011 · Lenexa, KS",details:[
+    "Handpicked for promotion to Lead Designer at the founder's next venture and developed its complete brand identity, still in use 15+ years later.",
+    "Created signage, apparel, web, and social assets; supported SEO, Google Analytics, Google Ads, WordPress CMS updates, and basic HTML/CSS edits.",
+    "Presented concepts directly to stakeholders and clients."
+  ]},
+  {company:"VML",role:"Copywriting Intern",period:"May – Aug 2010 · Kansas City, MO",details:[
+    "Selected to write a six-email B2B nurture campaign for SAP.",
+    "Authored a 200+ page digital strategy report for Carlson Hotels and presented a pitch deck to VML's CEO and Executive Creative Director."
+  ]},
+  {company:"Callahan Creek (now BarkleyOKRP)",role:"Copywriting Intern + Freelance Creative",period:"May 2009 – May 2010 · Lawrence, KS",details:[
+    "Selected from a competitive field; two campaign concepts were chosen for client rollout.",
+    "Extended into a freelance relationship based on creative execution and reliability. Client work included Hill's Pet Nutrition, CommunityAmerica, and Sprint."
+  ]},
+  {company:"Unisource Document Products",role:"Marketing & Design Intern",period:"May – Aug 2008",details:[
+    "Managed website updates and Google Analytics monitoring; designed a multimedia campaign for the UDP Tailgate product show."
+  ]},
+  {company:"Humane Society of Greater Kansas City",role:"Communications Intern",period:"May – Aug 2007",details:[
+    "Produced graphic design projects, news releases, and e-newsletters; conducted a live KCTV 5 interview promoting pet adoption."
+  ]}
+];
+---
+<Layout title="Résumé | Morgan Escott">
+  <article class="resume-page">
+    <header class="resume-header">
+      <a class="back-link screen-only" href="/home/">← Portfolio</a>
+      <div class="resume-heading-row">
+        <div>
+          <p class="kicker">Résumé / Curriculum Vitae</p>
+          <h1>Morgan L. Escott</h1>
+          <p class="resume-role">Creative Marketing &amp; Systems Leader | Email, Enablement &amp; Customer Onboarding</p>
+        </div>
+        <button class="button print-button screen-only" type="button" onclick="window.print()">Print / Save as PDF ↗</button>
+      </div>
+      <p class="resume-contact">Getzville, NY (Buffalo) · 716-352-9050 · <a href="mailto:escott.morgan@gmail.com">escott.morgan@gmail.com</a> · <a href="https://linkedin.com/in/morganescott">LinkedIn</a></p>
+    </header>
+    <section class="resume-section">
+      <h2>Profile</h2>
+      <p>Creative marketing strategist with 10+ years of experience building campaigns, content systems, and sales enablement infrastructure across SaaS, EdTech, nonprofit, and agency environments. I bring a storyteller's precision to every email, a systems thinker's rigor to every process, and a genuine respect for the reader in everything I write.</p>
+      <p>Best known for human-first messaging that performs, CRM operations that work, and building content libraries teams continue to use. I enjoy roles that ask me to write well, think strategically, and make complex things feel clear.</p>
+    </section>
+    <section class="resume-section">
+      <h2>Core skills</h2>
+      <div class="resume-skills">{skills.map(group => <div><h3>{group.title}</h3><p>{group.items.join(" · ")}</p></div>)}</div>
+    </section>
+    <section class="resume-section">
+      <h2>Professional experience</h2>
+      {history.map(job => <article class="resume-job">
+        <div class="resume-job-heading"><h3>{job.company}</h3><p>{job.period}</p></div>
+        <h4>{job.role}</h4>
+        {job.details.length > 0 && <ul>{job.details.map(item => <li>{item}</li>)}</ul>}
+      </article>)}
+    </section>
+    <section class="resume-section">
+      <h2>Selected projects</h2>
+      <article class="resume-job">
+        <div class="resume-job-heading"><h3>AI Resume-Tailoring Pipeline</h3><p>Personal project · 2026</p></div>
+        <ul>
+          <li>Designed and built a multi-model job-search system that scans 12+ job boards, scores role fit on a 10-dimension rubric, and tailors resumes with Gemini and Gemma.</li>
+          <li>Engineered claim-traceability guardrails, a validator for invented claims and generic AI phrasing, and a critique pass to repair failing bullets; backed by 3,600+ automated tests.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="resume-section resume-two-column">
+      <div>
+        <h2>Education</h2>
+        <article class="resume-credential">
+          <h3>BS, Journalism &amp; Strategic Communication</h3>
+          <p>University of Kansas · 2006–2008 · GPA 3.56</p>
+          <p>Phi Theta Kappa Scholarship; Marketing Intern, Lied Center of Performing Arts.</p>
+        </article>
+        <article class="resume-credential">
+          <h3>AA, Journalism</h3>
+          <p>Kansas City Kansas Community College · 2004–2006 · GPA 3.75</p>
+          <p>Full academic scholarship; graduated with honors; Editor-in-Chief of the student newspaper.</p>
+        </article>
+        <article class="resume-credential">
+          <h3>Graphic Design coursework</h3>
+          <p>Johnson County Community College · 2010–2011 · GPA 3.86</p>
+          <p>Color theory, typography, illustration, 3D concepts, desktop publishing, and film photography.</p>
+        </article>
+      </div>
+      <div>
+        <h2>Certifications &amp; development</h2>
+        <ul class="resume-plain-list"><li>Vidyard Video for Sales Certification · 2021</li><li>Camp Portfolio — Creative Advertising, Bernstein Rein · 2008</li></ul>
+        <h2 class="resume-subhead">Additional experience</h2>
+        <p>Marketing Intern, Lied Center of Kansas Performing Arts (2007–2008): expanded social media followers by 800%.</p>
+        <p><strong>Lied Center of Kansas Performing Arts</strong> · Marketing Intern · 2007–2008 — grew social media followers 800% through grassroots promotion.</p>
+        <p><strong>Kansas Colloquies</strong> · Reporter, Columnist &amp; Layout Assistant · 2004–2006 — wrote community stories, designed newspaper layouts, managed classified advertising, and created promotional materials.</p>
+        <p><strong>University of Kansas Payroll Office</strong> · Student Payroll Assistant · 2006–2008 — document processing and backend payroll operations support.</p>
+        <p>Additional seasonal administration and retail experience is available through LinkedIn.</p>
+      </div>
+    </section>
+    <footer class="resume-footer screen-only">
+      <a class="back-link" href="/home/">← Back to portfolio</a>
+      <a class="back-link" href="mailto:escott.morgan@gmail.com">Get in touch ↗</a>
+    </footer>
+  </article>
+</Layout>
