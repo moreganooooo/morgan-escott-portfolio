@@ -5,8 +5,8 @@
       "skills": [
         {"name": "Salesforce", "icon": "mdi:cloud-outline", "roles": ["sales-ops","admin"]},
         {"name": "Outreach", "icon": "mdi:email-outline", "roles": ["sales-ops","marketing"]},
-        {"name": "PersistIQ", "icon": "mdi:email-fast-outline", "roles": ["sales-ops","marketing"]},
-        {"name": "Mailchimp", "icon": "mdi:email-newsletter", "roles": ["marketing"]},
+        {"name": "PersistIQ", "icon": "mdi:email-outline", "roles": ["sales-ops","marketing"]},
+        {"name": "Mailchimp", "icon": "mdi:email-outline", "roles": ["marketing"]},
         {"name": "Drift", "icon": "mdi:message-text-outline", "roles": ["marketing","sales-ops"]},
         {"name": "Tout", "icon": "mdi:send-outline", "roles": ["sales-ops","marketing"]},
         {"name": "Vidyard", "icon": "mdi:video-outline", "roles": ["marketing","sales-ops"]}
@@ -46,7 +46,7 @@
         {"name": "Notion", "icon": "mdi:notebook-outline", "roles": ["all"]},
         {"name": "ChatGPT", "icon": "mdi:robot-outline", "roles": ["all"]},
         {"name": "Claude", "icon": "mdi:brain", "roles": ["all"]},
-        {"name": "Gemini", "icon": "mdi:google-gemini", "roles": ["all"]},
+        {"name": "Gemini", "icon": "mdi:robot-outline", "roles": ["all"]},
         {"name": "Perplexity", "icon": "mdi:robot", "roles": ["all"]}
       ]
     },
