@@ -1,0 +1,92 @@
+---
+const linkedin = [
+  {
+    name: 'Ray Mina',
+    title: 'VP Marketing & Interim VP Product, Treering Yearbooks',
+    label: 'LinkedIn recommendation',
+    quote: "I truly appreciated Morgan's thorough and thoughtful approach to sales development. She was on point with our brand focus of always trying to help new prospects first and had tremendous results in driving engagement with target customers."
+  },
+  {
+    name: 'Ed Roche',
+    title: 'Founding Partner, Strategy LLC',
+    label: 'LinkedIn recommendation',
+    quote: "She's succeeded whether it was writing to win customers, designing to elicit a 'wow' experience, or pulling a team together in a discovery process; Morgan got it done."
+  },
+  {
+    name: 'Ed Roche',
+    title: 'Founding Partner, Strategy LLC',
+    label: 'LinkedIn recommendation',
+    quote: "Working with Morgan is a joy and the work she produces in her areas of expertise (writing, designing, organizing, and coaching through a marketing messaging or designing discovery process) meets and usually exceeds client expectations."
+  },
+  {
+    name: 'Jason Wilson',
+    title: 'CEO, Element 8 / Strategy LLC',
+    label: 'LinkedIn recommendation',
+    quote: "She is a highly talented and creative designer. She was highly motivated and was a valued team member at Strategy and a former company Element 8. Her design talents consistently impressed clients."
+  },
+  {
+    name: 'Justin Lee',
+    title: 'Senior colleague at Morgan's marketing and design firm',
+    label: 'LinkedIn recommendation',
+    quote: "Morgan brought a high degree of professionalism and creativity to every project that was handed to her. Her detail-oriented approach ensured that we were putting our best foot forward all of the time."
+  }
+];
+
+const letters = [
+  {
+    name: 'Ferry Keizer',
+    title: 'VP Creative Director, Callahan Creek',
+    label: 'Recommendation letter',
+    quote: "As a key member of a creative team, Morgan offered strong conceptual and writing skills. ... She will make an excellent copywriter and employee."
+  },
+  {
+    name: 'Jaime Goddard',
+    title: 'Director of Marketing, Unisource Document Products',
+    label: 'Recommendation letter',
+    quote: "She met every deadline I presented her with, and always exceeded my expectations. In fact, UDP continues to use several of her designs to date."
+  },
+  {
+    name: 'Jason Jaworski',
+    title: 'Marketing Assistant, Lied Center of Kansas',
+    label: 'Recommendation letter',
+    quote: "She was well prepared, conscientious, reliable, and always had great ideas for new campaigns."
+  },
+  {
+    name: 'Robin Rowland',
+    title: 'VP Fund Development, Humane Society of Greater Kansas City',
+    label: 'Recommendation letter',
+    quote: "Morgan was someone who worked well under pressure and with tight deadlines. I could always rely on Morgan to create quality and creative work."
+  }
+];
+---
+
+<section class="testimonials band" id="testimonials">
+  <div class="wrap">
+    <p class="kicker">A few kind words</p>
+    <h2>Testimonials &amp;<br /><em>recommendations.</em></h2>
+    <p class="testimonials-intro">A mix of LinkedIn recommendations and archived recommendation letters from people I've worked with, managed, and supported across agency, nonprofit, and SaaS environments.</p>
+
+    <div class="testimonial-group">
+      <h3>LinkedIn recommendations</h3>
+      <div class="testimonial-grid">
+        {linkedin.map(item => <blockquote class="testimonial-card">
+          <p class="testimonial-label">{item.label}</p>
+          <p class="testimonial-quote">“{item.quote}”</p>
+          <footer><strong>{item.name}</strong><span>{item.title}</span></footer>
+        </blockquote>)}
+      </div>
+    </div>
+
+    <div class="testimonial-group">
+      <h3>Recommendation letters</h3>
+      <div class="testimonial-grid">
+        {letters.map(item => <blockquote class="testimonial-card">
+          <p class="testimonial-label">{item.label}</p>
+          <p class="testimonial-quote">“{item.quote}”</p>
+          <footer><strong>{item.name}</strong><span>{item.title}</span></footer>
+        </blockquote>)}
+      </div>
+      <p class="testimonial-note">These are excerpts from archived letters. The original letters can be shared directly when a fuller reference is useful.</p>
+    </div>
+  </div>
+</section>
