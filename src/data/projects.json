@@ -214,7 +214,7 @@
       ]
     },
     {
-      "title": "Cannoli",
+      "title": "Charm Studio",
       "description": "A visual builder and layout sandbox for terminal interfaces in the Charm ecosystem. Explore components, experiment with layouts, and make terminal UI design more approachable.",
       "images": [],
       "tech": [
@@ -224,7 +224,7 @@
         "Developer experience"
       ],
       "platforms": [],
-      "link": "https://github.com/moreganooooo/cannoli",
+      "link": "https://github.com/moreganooooo/charm-studio",
       "category": "Open-source design tool",
       "roles": [
         "creative"
