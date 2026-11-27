@@ -179,7 +179,7 @@ nav .nav-contact { color: var(--hero-orange); border: 1px solid currentColor; bo
 @media (max-width: 680px) {
   :root { --header: 3.8rem; }
   nav { gap: .7rem; font-size: .83rem; }
-  .nav-career { display: none; }
+  .nav-career, .nav-testimonials { display: none; }
   .nav-resume { font-size: .78rem; }
   .intro h1 { font-size: min(17vw,18svh); }
   .work-list, .about-grid, .tool-grid, .career-list article { grid-template-columns: 1fr; }
