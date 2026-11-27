@@ -37,15 +37,5 @@ export const CareerCollection: Collection = {
         },
       ],
     },
-    {
-      name: "education", label: "Education", type: "object", list: true,
-      ui: { itemProps: (item) => ({ label: item?.credential ?? "Education" }) },
-      fields: [
-        { name: "credential", label: "Credential", type: "string" },
-        { name: "institution", label: "Institution", type: "string" },
-        { name: "details", label: "Details", type: "string", ui: { component: "textarea" } },
-      ],
-    },
-    { name: "development", label: "Certifications & Development", type: "string", list: true },
   ],
 };
