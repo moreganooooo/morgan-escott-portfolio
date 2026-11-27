@@ -12,6 +12,7 @@
   const video = intro.querySelector('video')!;
   const control = intro.querySelector('button')!;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = 'connection' in navigator ? (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection : undefined;
   let frame = 0;
   let stallTimer = 0;
   let pausedByVisitor = false;
@@ -34,7 +35,11 @@
   }
   function tick() {
     draw();
-    frame = requestAnimationFrame(tick);
+    if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
+      (video as HTMLVideoElement & { requestVideoFrameCallback: (callback: () => void) => number }).requestVideoFrameCallback(() => tick());
+    } else {
+      frame = requestAnimationFrame(tick);
+    }
   }
   function stopClock() {
     cancelAnimationFrame(frame);
@@ -55,7 +60,7 @@
   }
   function syncPlayback() {
     if (settled) return;
-    if (preference.matches) return finish();
+    if (preference.matches || connection?.saveData || connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g') return finish();
     if (document.hidden || pausedByVisitor) {
       stopClock();
       video.pause();
@@ -75,6 +80,7 @@
   });
   video.addEventListener('waiting', () => { stopClock(); watchForPlayback(); });
   video.addEventListener('pause', stopClock);
+  video.addEventListener('loadedmetadata', draw);
   video.addEventListener('seeked', draw);
   video.addEventListener('ended', finish);
   video.addEventListener('error', finish);
