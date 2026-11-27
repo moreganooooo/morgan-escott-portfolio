@@ -1,5 +1,5 @@
 <section id="intro" class="intro" aria-label="Introduction">
-  <video muted playsinline preload="none" poster="/neon/ink-first-frame.webp" data-src="/neon/ink.mp4" aria-hidden="true"></video>
+  <video muted playsinline preload="none" poster="/neon/ink-first-frame.webp" data-src-small="/neon/ink-small.mp4" data-src-medium="/neon/ink-medium.mp4" aria-hidden="true"></video>
   <div class="ink-texture" aria-hidden="true"></div>
   <h1>Let’s<br /><span class="build-word">build</span><br />something<br /><span class="intro-last-line"><a class="beautiful-word" href="/home/">beautiful.</a><a class="enter" href="/home/" aria-label="Enter the portfolio"><span aria-hidden="true">→</span></a></span></h1>
   <div class="intro-controls">
@@ -66,7 +66,10 @@
       video.pause();
       return;
     }
-    if (!video.hasAttribute('src')) video.src = video.dataset.src!;
+    if (!video.hasAttribute('src')) {
+      const useMedium = window.matchMedia('(min-width: 1200px)').matches && !connection?.saveData;
+      video.src = useMedium ? video.dataset.srcMedium! : video.dataset.srcSmall!;
+    }
     watchForPlayback();
     video.play().catch(error => {
       if (error.name !== 'AbortError') finish();
@@ -91,5 +94,9 @@
   });
   document.addEventListener('visibilitychange', syncPlayback);
   preference.addEventListener('change', syncPlayback);
+  window.addEventListener('resize', () => {
+    if (!settled && video.hasAttribute('src')) return;
+    syncPlayback();
+  }, { passive: true });
   syncPlayback();
 </script>
