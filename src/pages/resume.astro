@@ -2,18 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 
 const skills = [
-  { title: "Email & lifecycle marketing", items: ["Campaign strategy", "Multi-touch sequencing", "Audience segmentation", "A/B testing", "Cohort analysis", "Outreach.io", "PersistIQ", "Mailchimp", "Drift", "Tout", "Campaign QA", "Personalization at scale"] },
+  { title: "Email & lifecycle marketing", items: ["Campaign strategy", "Multi-touch sequencing", "Audience segmentation", "A/B testing", "Cohort analysis", "Outreach.io", "PersistIQ", "Mailchimp", "Drift", "Tout", "Campaign QA", "Personalization at scale", "Variable logic", "Conversion tracking"] },
   { title: "Sales enablement & content", items: ["Brand voice development", "Playbook writing", "Sequence libraries", "Live and asynchronous training", "Sales collateral", "Onboarding content", "Cross-functional content programs"] },
-  { title: "CRM & marketing operations", items: ["Salesforce Classic & Lightning", "Data hygiene", "Reports and dashboards", "Pipeline management", "Workflow automation", "HubSpot (basic)", "Process documentation", "Data scrubbing and imports"] },
-  { title: "Creative & design", items: ["Adobe Illustrator, Photoshop and InDesign", "Canva", "Figma (basic)", "Copywriting and editing", "Pitch deck design", "Brand identity"] },
-  { title: "Analytics & productivity", items: ["Google Analytics", "Google Ads", "Facebook Ads", "Vidyard", "Thnks", "Slack", "Zoom", "Trello", "Microsoft Office", "Google Workspace", "Notion"] },
-  { title: "AI & technical tools", items: ["ChatGPT", "Claude", "Gemini", "Perplexity", "Notion AI", "Python (basic)"] }
+  { title: "CRM & marketing operations", items: ["Salesforce Classic & Lightning", "Data hygiene", "Reports and dashboards", "Pipeline management", "Workflow automation", "HubSpot (basic)", "Process documentation", "Data scrubbing and imports", "CSV imports", "Person Accounts", "Google Sheets reporting"] },
+  { title: "Creative & design", items: ["Adobe Illustrator, Photoshop and InDesign", "Canva", "Figma (basic)", "Copywriting and editing", "Pitch deck design", "Brand identity", "SEO", "WordPress", "Webflow", "Wix", "HTML/CSS (basic)"] },
+  { title: "Analytics & productivity", items: ["Google Analytics", "Google Ads", "Facebook Ads", "Vidyard", "Thnks", "Airtable", "Slack", "Zoom", "Trello", "Microsoft Office", "Google Workspace", "Notion"] },
+  { title: "AI & technical tools", items: ["ChatGPT", "Claude", "Gemini", "Perplexity", "Notion AI", "Python (basic)", "GitHub"] }
 ];
 
 const history = [
   {company:"Mercor",role:"Sales & Marketing Expert",period:"Aug 2025 · Short-term contract · Remote",details:[
     "Designed an adversarial EdTech prospecting challenge to test a frontier AI model, using research on K–12 technology adoption, district school counts, and regional market factors.",
-    "Built and solved the challenge as an answer key, wrote a detailed reviewer rubric, and tested the prompt and rubric in a custom Airtable interface."
+    "Built and solved the challenge as an answer key, wrote a detailed reviewer rubric, and tested the prompt and rubric in a custom Airtable interface.",
+    "Completed platform training and qualification assessments before production, then logged model successes and failures and clarified task requirements with project leads over Slack."
   ]},
   {company:"Treering Yearbooks",role:"Creative Strategy Lead & Senior Sales Development Manager",period:"Aug 2016 – Aug 2024 · Remote",details:[
     "Co-founded the outbound sales program as one of its first two hires, building prospecting processes, data workflows, and messaging from the ground up.",
@@ -23,7 +24,10 @@ const history = [
     "Developed live and asynchronous training for 20+ employees and created an internal process resource adopted into new-hire training.",
     "Coached a remote team of 4–6 SDRs, while managing 2,000+ accounts and partnering with Marketing, Product, Engineering, Operations, and Support.",
     "First outbound hire to surpass $1M in sourced revenue, exceeding the first-year target by 17%; personally generated $1.5M+ in closed-won revenue from sourced opportunities.",
-    "Audited stale CRM records and built the business case and workflows for a Salesforce research role, surfacing more than $3M in stale, unworked accounts."
+    "Owned 2,900+ school accounts across 51 states and 565 districts; used bulk CSV imports, unique-school-ID deduplication, Google Sheets prioritization, and Salesforce reporting to keep the data usable.",
+    "Audited stale CRM records and built the business case and workflows for a Salesforce research role, surfacing more than $3M in stale, unworked accounts.",
+    "Championed the move from PersistIQ to Outreach.io, built the feature comparison that informed the decision, then configured views and trained teammates on the platform.",
+    "Pioneered district-level outreach and PTA strategy, turning audience insight into team-wide templates and training."
   ]},
   {company:"Inside Sales Team (now Alleyoop)",role:"Business Development Representative",period:"Oct 2015 – Aug 2016 · Buffalo, NY",details:[
     "Named Top Seller of the hiring class and a Top 10 performer during the first two months.",
@@ -113,10 +117,13 @@ const history = [
       </div>
       <div>
         <h2>Certifications &amp; development</h2>
-        <ul><li>Vidyard Video for Sales Certification · 2021</li><li>Camp Portfolio, Bernstein Rein · 2008</li></ul>
+        <ul class="resume-plain-list"><li>Vidyard Video for Sales Certification · 2021</li><li>Camp Portfolio — Creative Advertising, Bernstein Rein · 2008</li></ul>
         <h2 class="resume-subhead">Additional experience</h2>
         <p>Marketing Intern, Lied Center of Kansas Performing Arts (2007–2008): expanded social media followers by 800%.</p>
-        <p>Additional roles across payroll, seasonal administration, retail, journalism production, and community newspaper layout are available on request or through LinkedIn.</p>
+        <p><strong>Lied Center of Kansas Performing Arts</strong> · Marketing Intern · 2007–2008 — grew social media followers 800% through grassroots promotion.</p>
+        <p><strong>Kansas Colloquies</strong> · Reporter, Columnist &amp; Layout Assistant · 2004–2006 — wrote community stories, designed newspaper layouts, managed classified advertising, and created promotional materials.</p>
+        <p><strong>University of Kansas Payroll Office</strong> · Student Payroll Assistant · 2006–2008 — document processing and backend payroll operations support.</p>
+        <p>Additional seasonal administration and retail experience is available through LinkedIn.</p>
       </div>
     </section>
     <footer class="resume-footer screen-only">
