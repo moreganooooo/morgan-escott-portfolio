@@ -30,11 +30,6 @@ export default [
   },
 
   {
-    ...astro.configs['flat/jsx-a11y-recommended'],
-    files: ['**/*.astro'],
-  },
-
-  {
     ...mdx.flat,
     files: ['**/*.mdx'],
   },
