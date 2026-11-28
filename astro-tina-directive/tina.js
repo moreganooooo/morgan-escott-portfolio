@@ -2,7 +2,7 @@
  * Hydrate on first click on the window
  * @type {import('astro').ClientDirective}
  */
-export default async (load, options, el) => {
+export default async (load) => {
   try {
     const isInIframe = window.self !== window.top;
     if (!isInIframe) {
