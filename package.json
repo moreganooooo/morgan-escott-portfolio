@@ -24,6 +24,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^7.4.13",
     "astro-icon": "^1.1.5",
+    "botid": "^1.5.13",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tailwindcss": "^4.2.0",
