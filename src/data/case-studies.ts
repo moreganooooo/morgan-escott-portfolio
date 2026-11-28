@@ -11,54 +11,6 @@ export const caseStudies = {
     highlights: ["129 Outreach sequences reorganized", "14-category campaign QA checklist", "Training resources used by 20+ teammates"],
     link: "https://moreganooooo.github.io/CuripodApplication/#stories"
   },
-  "district-targeting": {
-    title: "Making local credibility do the talking",
-    kicker: "Treering · Geo-targeted district conversion",
-    intro: "When a district's schools were already hearing from yearbook vendors, a generic pitch was unlikely to stand out. This campaign used nearby customer relationships to help TreeRing feel less like an unfamiliar vendor and more like a proven local partner.",
-    sections: [
-      ["Start with the neighborhood", "Working within Treering's Hot Zone strategy, I developed hyper-localized messaging for schools in McKinney ISD. The copy referenced nearby partner schools, district vendor outreach, and a local offer, using community relevance as the opening rather than leading with price."],
-      ["Write for each decision-maker", "I created variations for principals and yearbook advisors, including messages that coordinated with multiple stakeholders. Each version reflected the recipient's role and the relationship history, while keeping the shared proof points consistent."],
-      ["Make social proof specific", "The archived samples show how local references, district context, and practical value worked together. Instead of saying TreeRing was trusted in general, the copy named neighboring schools and offered to connect prospects with references."]
-    ],
-    highlights: ["McKinney ISD audience", "Principal and advisor variants", "Local customer proof and multi-stakeholder messaging"],
-    link: null
-  },
-  "mobile-strategy": {
-    title: "One brand, three mobile experiences",
-    kicker: "Waste Management · VML",
-    intro: "Waste Management had several goals competing for attention: improve self-service, support digital transactions, reduce routine service calls, and build a more modern environmental brand. The strategic response was not one generic utility app, but three distinct mobile concepts for three different customer mindsets.",
-    sections: [
-      ["WM Mobile: make service simpler", "The service-first concept extended WM.com into a mobile experience for account management, bill payment, and service requests. The copy prioritized direct actions such as reviewing an amount due, arranging a pickup, and finding services by ZIP code."],
-      ["Planet Recycle: make learning inviting", "The education-first concept brought recycling information and Waste Management services together. The message helped people understand recycling, explore environmental impact, and share their own progress."],
-      ["Free Trade: make reuse social", "The community-first concept reframed unwanted items as things someone else could use. Friendly, action-oriented copy supported giving, chatting, and building trust between neighbors."]
-    ],
-    highlights: ["Three distinct mobile concepts", "Service, education, and community audiences", "Digital self-service and environmental brand strategy"],
-    link: null
-  },
-  "district-targeting": {
-    title: "Making local credibility do the talking",
-    kicker: "Treering · Geo-targeted district conversion",
-    intro: "When a district's schools were already hearing from yearbook vendors, a generic pitch was unlikely to stand out. This campaign used nearby customer relationships to help TreeRing feel less like an unfamiliar vendor and more like a proven local partner.",
-    sections: [
-      ["Start with the neighborhood", "Working within Treering's Hot Zone strategy, I developed hyper-localized messaging for schools in McKinney ISD. The copy referenced nearby partner schools, district vendor outreach, and a local offer, using community relevance as the opening rather than leading with price."],
-      ["Write for each decision-maker", "I created variations for principals and yearbook advisors, including messages that coordinated with multiple stakeholders. Each version reflected the recipient's role and the relationship history, while keeping the shared proof points consistent."],
-      ["Make social proof specific", "The archived samples show how local references, district context, and practical value worked together. Instead of saying TreeRing was trusted in general, the copy named neighboring schools and offered to connect prospects with references."]
-    ],
-    highlights: ["McKinney ISD audience", "Principal and advisor variants", "Local customer proof and multi-stakeholder messaging"],
-    link: null
-  },
-  "mobile-strategy": {
-    title: "One brand, three mobile experiences",
-    kicker: "Waste Management · VML",
-    intro: "Waste Management had several goals competing for attention: improve self-service, support digital transactions, reduce routine service calls, and build a more modern environmental brand. The strategic response was not one generic utility app, but three distinct mobile concepts for three different customer mindsets.",
-    sections: [
-      ["WM Mobile: make service simpler", "The service-first concept extended WM.com into a mobile experience for account management, bill payment, and service requests. The copy prioritized direct actions such as reviewing an amount due, arranging a pickup, and finding services by ZIP code."],
-      ["Planet Recycle: make learning inviting", "The education-first concept brought recycling information and Waste Management services together. The message helped people understand recycling, explore environmental impact, and share their own progress."],
-      ["Free Trade: make reuse social", "The community-first concept reframed unwanted items as things someone else could use. Friendly, action-oriented copy supported giving, chatting, and building trust between neighbors."]
-    ],
-    highlights: ["Three distinct mobile concepts", "Service, education, and community audiences", "Digital self-service and environmental brand strategy"],
-    link: null
-  },
   "time-specific-follow-up": {
     title: "A better time to follow up",
     kicker: "Treering · Lifecycle messaging",
